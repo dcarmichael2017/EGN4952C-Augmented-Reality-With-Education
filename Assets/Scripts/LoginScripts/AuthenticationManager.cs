@@ -8,6 +8,8 @@ using System;
 using System.Threading.Tasks;
 using System.Net;
 
+using Facebook.Unity;
+
 public class AuthenticationManager : MonoBehaviour
 {
     // the AWS region of where your services live
@@ -245,5 +247,42 @@ public class AuthenticationManager : MonoBehaviour
     {
         Debug.Log("AuthenticationManager: Awake");
         _provider = new AmazonCognitoIdentityProviderClient(new Amazon.Runtime.AnonymousAWSCredentials(), Region);
+
+        if (!FB.IsInitialized)
+        {
+            // Initialize Facebook SDK
+            FB.Init(FBInitCallback, FBOnHideUnity);
+        } else
+        {
+            // Already initialized, signal an app activation App Event
+            FB.ActivateApp();
+        }
+
+
+    }
+
+    private void FBInitCallback()
+    {
+        if (FB.IsInitialized)
+        {
+            // Signal an app activation App Event
+            FB.ActivateApp();
+            //Continue with Facebook SDK
+            //...
+        } else
+        {
+            Debug.Log("Failed to Initialize the Facebook SDK");
+        }
+    }
+
+    private void FBOnHideUnity(bool isGameShown)
+    {
+        if (!isGameShown)
+        {
+            //Pause the game - we will need to hide
+        } else
+        {
+            //Resume the game - we're getting focus again
+        }
     }
 }
