@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using TMPro;
 using QuantumTek.SimpleMenu;
 
+using Facebook.Unity;
+
+using QuantumTek.SimpleMenu;
+
 // Manages all the text and button inputs
 // Also acts like the main manager script for the game.
 public class UIInputManagerTMPro : MonoBehaviour
@@ -13,6 +17,7 @@ public class UIInputManagerTMPro : MonoBehaviour
 
     public Button registerButton;
     public Button loginButton;
+    public Button fbLoginButton;
     public Button logoutButton;
     public Button loginButtonMainMenu;
     public Button refreshRankingsButton;
@@ -44,8 +49,6 @@ public class UIInputManagerTMPro : MonoBehaviour
             _loading.SetActive(false);
             loginButtonMainMenu.gameObject.SetActive(false);
             logoutButton.gameObject.SetActive(true);
-            //mainMenu.gameObject.SetActive(true);
-            //loginMenu.gameObject.SetActive(false);
             loginMenu.Toggle(false);
             mainMenu.Toggle(true);
             userIDText.SetText(_authenticationManager.GetUsersId());
@@ -72,7 +75,7 @@ public class UIInputManagerTMPro : MonoBehaviour
     private async void onLoginClicked()
     {
         _loading.SetActive(true);
-        Debug.Log("onLoginClicked: " + emailFieldLogin.text + ", " + passwordFieldLogin.text);
+        Debug.Log("onLoginClicked: " + emailFieldLogin.text);
         bool successfulLogin = await _authenticationManager.Login(emailFieldLogin.text, passwordFieldLogin.text);
         displayComponentsFromAuthStatus(successfulLogin);
     }
@@ -106,12 +109,21 @@ public class UIInputManagerTMPro : MonoBehaviour
 
     private void onLogoutClick()
     {
-        _authenticationManager.SignOut();
+        if (FB.IsLoggedIn)
+        {
+            // Facebook Logout is Logged in with Facebook
+            Debug.Log("FB Logout");
+            FB.LogOut();
+        } else
+        {
+            // otherwise AWS Cognito sign out
+            Debug.Log("AWS Cognito Logout");
+            _authenticationManager.SignOut();
+        }
+        //_authenticationManager.SignOut();
         displayComponentsFromAuthStatus(false);
         loginButtonMainMenu.gameObject.SetActive(true);
         logoutButton.gameObject.SetActive(false);
-        //mainMenu.SetActive(false);
-        //loginMenu.SetActive(true);
         loginMenu.Toggle(true);
         mainMenu.Toggle(false);
     }
@@ -125,10 +137,58 @@ public class UIInputManagerTMPro : MonoBehaviour
         //_lambdaManager.ExecuteLambda();
     }
 
+    private void onFBLoginClicked()
+    {
+        Debug.Log("onFBLoginClicked");
+        var perms = new List<string>() { "public_profile", "email" };
+        FB.LogInWithReadPermissions(perms, FBAuthCallback);
+        bool successfulLogin = true;
+        displayComponentsFromAuthStatus(successfulLogin);
+    }
+
+    private void FBAuthCallback(ILoginResult result)
+    {
+        if (FB.IsLoggedIn)
+        {
+            // AccessToken class will have session details
+            var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
+            // Print current access token's User ID
+            Debug.Log(aToken.UserId);
+            // Print current access token's granted permissions
+            foreach (string perm in aToken.Permissions)
+            {
+                Debug.Log(perm);
+            }
+        }
+        else
+        {
+            Debug.Log("User cancelled Login");
+        }
+    }
+
     private async void RefreshToken()
     {
-        bool successfulRefresh = await _authenticationManager.RefreshSession();
-        displayComponentsFromAuthStatus(successfulRefresh);
+        if (FB.IsLoggedIn)
+        {
+            // Facebook refresh
+            FB.Mobile.RefreshCurrentAccessToken(FBRefreshCallback);
+            bool successfulRefresh = true;
+            displayComponentsFromAuthStatus(successfulRefresh);
+        }
+        else
+        {
+            // AWS Cognito refresh
+            bool successfulRefresh = await _authenticationManager.RefreshSession();
+            displayComponentsFromAuthStatus(successfulRefresh);
+        }
+    }
+
+    private void FBRefreshCallback(IAccessTokenRefreshResult result)
+    {
+        if (FB.IsLoggedIn)
+        {
+            Debug.Log(result.AccessToken.ExpirationTime.ToString());
+        }
     }
 
     void Start()
@@ -140,6 +200,7 @@ public class UIInputManagerTMPro : MonoBehaviour
 
         registerButton.onClick.AddListener(onSignupClicked);
         loginButton.onClick.AddListener(onLoginClicked);
+        fbLoginButton.onClick.AddListener(onFBLoginClicked);
         logoutButton.onClick.AddListener(onLogoutClick);
     }
 
