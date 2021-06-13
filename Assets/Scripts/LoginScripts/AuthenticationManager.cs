@@ -59,6 +59,7 @@ public class AuthenticationManager : MonoBehaviour
             // Debug.Log("User Access Token after refresh: " + token);
             Debug.Log("User refresh token successfully updated!");
 
+
             // update session cache
             UserSessionCache userSessionCacheToUpdate = new UserSessionCache(
                authFlowResponse.AuthenticationResult.IdToken,
@@ -68,10 +69,14 @@ public class AuthenticationManager : MonoBehaviour
 
             SaveDataManager.SaveJsonData(userSessionCacheToUpdate);
 
+            
+
             // update credentials with the latest access token
             _cognitoAWSCredentials = user.GetCognitoAWSCredentials(IdentityPool, Region);
 
             _user = user;
+
+            Debug.Log("USER: ");
 
             return true;
         }

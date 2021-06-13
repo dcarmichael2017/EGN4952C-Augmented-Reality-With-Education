@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using TMPro;
+using QuantumTek.SimpleMenu;
 
 // Manages all the text and button inputs
 // Also acts like the main manager script for the game.
@@ -14,18 +15,23 @@ public class UIInputManagerTMPro : MonoBehaviour
     public Button loginButton;
     public Button logoutButton;
     public Button loginButtonMainMenu;
+    public Button refreshRankingsButton;
 
+    //Input Fields
     public TMP_InputField emailFieldLogin;
     public TMP_InputField passwordFieldLogin;
     public TMP_InputField usernameField;
     public TMP_InputField emailField;
     public TMP_InputField passwordField;
 
+    //Text Fields
+    public TMP_Text userIDText;
+
     private AuthenticationManager _authenticationManager;
     private LambdaManager _lambdaManager;
     public GameObject _loading;
-    public GameObject mainMenu;
-    public GameObject loginMenu;
+    public SM_Window mainMenu;
+    public SM_Window loginMenu;
 
     private List<Selectable> _fields;
     private int _selectedFieldIndex = -1;
@@ -38,15 +44,21 @@ public class UIInputManagerTMPro : MonoBehaviour
             _loading.SetActive(false);
             loginButtonMainMenu.gameObject.SetActive(false);
             logoutButton.gameObject.SetActive(true);
-            mainMenu.gameObject.SetActive(true);
-            loginMenu.gameObject.SetActive(false);
+            //mainMenu.gameObject.SetActive(true);
+            //loginMenu.gameObject.SetActive(false);
+            loginMenu.Toggle(false);
+            mainMenu.Toggle(true);
+            userIDText.SetText(_authenticationManager.GetUsersId());
+            refreshRankingsButton.gameObject.SetActive(true);
         }
         else
         {
             Debug.Log("User not authenticated, activate/stay on login scene");
+            userIDText.SetText("");
             _loading.SetActive(false);
             loginButtonMainMenu.gameObject.SetActive(true);
             logoutButton.gameObject.SetActive(false);
+            refreshRankingsButton.gameObject.SetActive(false);
         }
 
         // clear out passwords
@@ -98,8 +110,10 @@ public class UIInputManagerTMPro : MonoBehaviour
         displayComponentsFromAuthStatus(false);
         loginButtonMainMenu.gameObject.SetActive(true);
         logoutButton.gameObject.SetActive(false);
-        mainMenu.SetActive(false);
-        loginMenu.SetActive(true);
+        //mainMenu.SetActive(false);
+        //loginMenu.SetActive(true);
+        loginMenu.Toggle(true);
+        mainMenu.Toggle(false);
     }
 
     private void onStartClick()

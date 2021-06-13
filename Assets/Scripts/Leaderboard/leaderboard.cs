@@ -11,19 +11,27 @@ using TMPro;
 public class leaderboard : MonoBehaviour
 {
     public string Username;
+    public int Clicks;
     public  TMP_Text leaderBoardText;
 
-    
+    public AuthenticationManager _authenticationManager;
+
+
     void Start()
     {
-        Username = "Alex";
+        //Username = "Alex";
+        
         GetScoresForLeaderBoard();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        try
+        {
+            Username = (_authenticationManager.GetUsersId());
+        }
+        catch { }
     }
 
     [Serializable]
@@ -50,15 +58,17 @@ public class leaderboard : MonoBehaviour
         }
     }
 
+    [Obsolete]
     public void GetScoresForLeaderBoard() 
     {
         StartCoroutine(GetScores());
     }
 
+    [Obsolete]
     public void PostToLeaderBoard()
     {
         EventData leaderboardData = new EventData();
-        //leaderboardData.Clicks = Clicks;
+        leaderboardData.Clicks = Clicks;
         string json = JsonUtility.ToJson(leaderboardData);
         byte[] bodyRaw = new System.Text.UTF8Encoding().GetBytes(json);
 
@@ -86,6 +96,7 @@ public class leaderboard : MonoBehaviour
         GetScoresForLeaderBoard();
     }
 
+    [Obsolete]
     public IEnumerator GetScores() 
     {
         UnityWebRequest www = UnityWebRequest.Get(DNS);
@@ -107,7 +118,7 @@ public class leaderboard : MonoBehaviour
         int eventDataCounter = 1;
         foreach (EventData data in eventLeaderBoard)
         {
-            leaderBoardText.text += eventDataCounter + ". " + data.Username + " " + data.Clicks + "\n";
+            leaderBoardText.text += eventDataCounter + ". " + data.Username + ": " + data.Clicks + "\n";
             eventDataCounter++;
         }
     }
