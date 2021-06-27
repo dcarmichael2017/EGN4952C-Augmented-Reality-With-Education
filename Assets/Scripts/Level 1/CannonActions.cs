@@ -43,7 +43,7 @@ public class CannonActions : MonoBehaviour
 
     }
 
-    private void ShootCannonBall()
+    public void ShootCannonBall()
     {
         GameObject cannonball = Instantiate(Cannonball, CannonBall_Spawn.position, Quaternion.identity);
 

@@ -7,6 +7,9 @@ public class CannonMovement : MonoBehaviour
     public float speed = 25f;
     public Rigidbody barrel;
 
+    public bool leftArrow;
+    public bool rightArrow;
+
     private Rigidbody rb; //base of cannon
     private float dirX;
 
@@ -19,8 +22,21 @@ public class CannonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //left/right button movement
+
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
+
+        if (leftArrow)
+        {
+            x = -Time.fixedDeltaTime * speed;
+        }
+
+        if (rightArrow)
+        {
+            x = Time.fixedDeltaTime * speed;
+        }
+
+        //left/right button movement
+        
         rb.MovePosition(rb.position + Vector3.right * x);
         barrel.MovePosition(barrel.position + Vector3.right * x);
 
@@ -32,6 +48,29 @@ public class CannonMovement : MonoBehaviour
         //UI Button movement
     }
 
+    public void Buttons(string buttons) 
+    {
+        switch (buttons) 
+        {
+            case "LEFTARROWDOWN":
+                leftArrow = true;
 
+                break;
 
+            case "LEFTARROWUP":
+                leftArrow = false;
+
+                break;
+
+            case "RIGHTARROWDOWN":
+                rightArrow = true;
+
+                break;
+
+            case "RIGHTARROWUP":
+                rightArrow = false;
+
+                break;
+        }
+    }
 }
