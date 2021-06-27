@@ -10,6 +10,9 @@ public class CannonMovement : MonoBehaviour
     public bool leftArrow;
     public bool rightArrow;
 
+    public int leftConstraint;
+    public int rightConstraint;
+
     private Rigidbody rb; //base of cannon
     private float dirX;
 
@@ -17,6 +20,8 @@ public class CannonMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        leftConstraint = 0;
+        rightConstraint = 5;
     }
 
     // Update is called once per frame
@@ -25,12 +30,12 @@ public class CannonMovement : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
-        if (leftArrow)
+        if (leftArrow && rb.position.x >= leftConstraint)
         {
             x = -Time.fixedDeltaTime * speed;
         }
 
-        if (rightArrow)
+        if (rightArrow && rb.position.x <= rightConstraint)
         {
             x = Time.fixedDeltaTime * speed;
         }

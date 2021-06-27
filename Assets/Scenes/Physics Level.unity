@@ -1158,7 +1158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.149183
+      value: 5.09
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1559,6 +1559,25 @@ MonoBehaviour:
   barrel: {fileID: 917509839}
   leftArrow: 0
   rightArrow: 0
+  leftConstraint: 0
+  rightConstraint: 0
+--- !u!1818360608 &1356970987
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356970980}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 3.178, y: 16.691, z: -24.53}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_IsContraintActive: 0
+  m_IsLocked: 0
+  m_Sources: []
 --- !u!1 &1632086673
 GameObject:
   m_ObjectHideFlags: 0
