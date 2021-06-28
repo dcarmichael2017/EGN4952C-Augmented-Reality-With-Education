@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class PowerAndSize : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PowerAndSize : MonoBehaviour
 
 	public Rigidbody cannonBall;
 
-	public Text powerText;
+	public TMP_Text powerText;
 
 	void Start()
 	{
@@ -22,6 +23,6 @@ public class PowerAndSize : MonoBehaviour
 	void Update()
 	{
 		cannonActions = cannon.GetComponent<CannonActions>();
-		powerText.text = "Power: " + cannonActions.Power.ToString() + "\nMass: " + cannonBall.mass.ToString("G");
+		powerText.text = "Force: " + cannonActions.Power.ToString() + "\nMass: " + cannonBall.mass.ToString("G");
 	}
 }
