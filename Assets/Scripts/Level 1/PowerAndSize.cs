@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class PowerAndSize : MonoBehaviour
 {
-	/*public GameObject cannon;
+	public GameObject cannon;
+
+	public CannonActions cannonActions;
+
+	public Rigidbody cannonBall;
+
 	public Text powerText;
-	public Script cannonActions;
 
 	void Start()
 	{
-		GameObject cannon = GameObject.Find("CannonPower");
-		CannonActions cannonActions = cannon.GetComponent<CannonActions>();
+		cannonBall = cannon.GetComponent<Rigidbody>();
+		cannonActions = cannon.GetComponent<CannonActions>();
 
 	}
 	// Update is called once per frame
 	void Update()
 	{
-		powerText.text = cannonActions.power.ToString("0");
-	}*/
+		cannonActions = cannon.GetComponent<CannonActions>();
+		powerText.text = "Power: " + cannonActions.Power.ToString() + "\nMass: " + cannonBall.mass.ToString("G");
+	}
 }
