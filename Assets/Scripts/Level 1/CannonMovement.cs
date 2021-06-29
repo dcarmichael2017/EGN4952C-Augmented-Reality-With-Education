@@ -41,7 +41,6 @@ public class CannonMovement : MonoBehaviour
         }
 
         //left/right button movement
-        
         rb.MovePosition(rb.position + Vector3.right * x);
         barrel.MovePosition(barrel.position + Vector3.right * x);
 

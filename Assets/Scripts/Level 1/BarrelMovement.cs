@@ -7,7 +7,11 @@ public class BarrelMovement : MonoBehaviour
     public float speed = 25f;
     private Rigidbody rb;
 
-    private float dirY;
+    public bool upArrow;
+    public bool downArrow;
+
+    private float upConstraint;
+    private float downConstraint;
 
     private float rotationX = 90f;
 
@@ -15,23 +19,73 @@ public class BarrelMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        upConstraint = 72f;
+        downConstraint = 90f;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown("up") && rotationX > 72f)
+        //UI D-pad input
+        if (upArrow && rotationX > upConstraint)
         {
-            //rotate up
-            rotationX = rotationX - 1f;
-            rb.rotation = Quaternion.Euler(rotationX, 0, 0);
-        } else if (Input.GetKeyDown("down") && rotationX < 90f)
-        {
-            //rotate down
-            rotationX = rotationX + 1f;
-            rb.rotation = Quaternion.Euler(rotationX, 0, 0);
+            rotateUp();
         }
 
+        if (downArrow && rotationX < downConstraint)
+        {
+            rotateDown();
+        }
+
+
+        //Arrow keys input
+        if (Input.GetKeyDown("up") && rotationX > upConstraint)
+        {
+            rotateUp();
+        } else if (Input.GetKeyDown("down") && rotationX < downConstraint)
+        {
+            rotateDown();
+        }
+
+    }
+
+    public void Buttons(string buttons)
+    {
+        switch (buttons)
+        {
+            case "UPARROWDOWN":
+                upArrow = true;
+
+                break;
+
+            case "UPARROWUP":
+                upArrow = false;
+
+                break;
+
+            case "DOWNARROWDOWN":
+                downArrow = true;
+
+                break;
+
+            case "DOWNARROWUP":
+                downArrow = false;
+
+                break;
+        }
+    }
+
+    private void rotateUp()
+    {
+        //rotate up
+        rotationX = rotationX - 1f;
+        rb.rotation = Quaternion.Euler(rotationX, 0, 0);
+    }
+
+    private void rotateDown()
+    {
+        //rotate down
+        rotationX = rotationX + 1f;
+        rb.rotation = Quaternion.Euler(rotationX, 0, 0);
     }
 }
