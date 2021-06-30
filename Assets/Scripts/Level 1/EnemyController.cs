@@ -41,10 +41,14 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Projectile")
+        if(collision.gameObject.CompareTag("Projectile"))
         {
             ModifyHealth(-50);
-            
+        }
+
+        else if (collision.gameObject.CompareTag("Castle"))
+        {
+            Destroy(gameObject);
         }
     }
 }
