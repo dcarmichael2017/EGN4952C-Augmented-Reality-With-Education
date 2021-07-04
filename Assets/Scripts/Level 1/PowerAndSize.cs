@@ -13,8 +13,15 @@ public class PowerAndSize : MonoBehaviour
 
 	public TMP_Text powerText;
 
+	public bool plusButton;
+
+	public bool minusButton;
+
+	private float massConstraint;
+
 	void Start()
 	{
+		massConstraint =0f;
 		cannonBall = cannon.GetComponent<Rigidbody>();
 		cannonActions = cannon.GetComponent<CannonActions>();
 
@@ -22,7 +29,41 @@ public class PowerAndSize : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (plusButton){
+			cannonBall.mass = cannonBall.mass + 5;
+			plusButton = false;
+		}
+		if (minusButton && cannonBall.mass >= 5){
+			cannonBall.mass = cannonBall.mass - 5;
+			minusButton = false;
+		}
 		cannonActions = cannon.GetComponent<CannonActions>();
-		powerText.text = "Force: " + cannonActions.Power.ToString() + "\nMass: " + cannonBall.mass.ToString("G");
+		powerText.text = "Force: " + cannonActions.Power.ToString() + "\nMass: " + cannonBall.mass.ToString("G") + "\nAcceleration: " + (cannonActions.Power/cannonBall.mass).ToString();
 	}
+
+	public void Buttons(string buttons)
+    {
+        switch (buttons)
+        {
+            case "PLUSBUTTONDOWN":
+                plusButton = true;
+
+                break;
+
+            case "PLUSBUTTONUP":
+                plusButton = false;
+
+                break;
+
+            case "MINUSBUTTONDOWN":
+                minusButton = true;
+
+                break;
+
+            case "MINUSBUTTONUP":
+                minusButton = false;
+
+                break;
+        }
+    }
 }
