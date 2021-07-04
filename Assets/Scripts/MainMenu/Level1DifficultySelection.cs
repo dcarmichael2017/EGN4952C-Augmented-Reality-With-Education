@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using QuantumTek.SimpleMenu;
 
-public class DifficultySelection : MonoBehaviour
+public class Level1DifficultySelection : MonoBehaviour
 {
 
     public Button level1easy;
@@ -19,7 +19,7 @@ public class DifficultySelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void onLevel1EasyClicked()
