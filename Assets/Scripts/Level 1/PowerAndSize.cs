@@ -21,7 +21,7 @@ public class PowerAndSize : MonoBehaviour
 
 	void Start()
 	{
-		massConstraint =0f;
+		massConstraint =1f;
 		cannonBall = cannon.GetComponent<Rigidbody>();
 		cannonActions = cannon.GetComponent<CannonActions>();
 
@@ -33,7 +33,7 @@ public class PowerAndSize : MonoBehaviour
 			cannonBall.mass = cannonBall.mass + 5;
 			plusButton = false;
 		}
-		if (minusButton && cannonBall.mass >= 5){
+		if (minusButton && (cannonBall.mass - 5) >= massConstraint){
 			cannonBall.mass = cannonBall.mass - 5;
 			minusButton = false;
 		}
