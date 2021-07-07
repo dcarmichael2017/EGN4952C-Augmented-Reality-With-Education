@@ -16,6 +16,8 @@ public class CannonMovement : MonoBehaviour
     private Rigidbody rb; //base of cannon
     private float dirX;
 
+    private float scale = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +34,12 @@ public class CannonMovement : MonoBehaviour
 
         if (leftArrow && rb.position.x >= leftConstraint)
         {
-            x = -Time.fixedDeltaTime * speed;
+            x = -Time.fixedDeltaTime * speed * scale;
         }
 
         if (rightArrow && rb.position.x <= rightConstraint)
         {
-            x = Time.fixedDeltaTime * speed;
+            x = Time.fixedDeltaTime * speed * scale;
         }
 
         //left/right button movement
@@ -45,7 +47,7 @@ public class CannonMovement : MonoBehaviour
         barrel.MovePosition(barrel.position + Vector3.right * x);
 
         //accelerometer movement
-        dirX = Input.acceleration.x * Time.fixedDeltaTime * speed;
+        dirX = Input.acceleration.x * Time.fixedDeltaTime * speed * scale;
         rb.MovePosition(rb.position + Vector3.right * dirX);
         barrel.MovePosition(barrel.position + Vector3.right * dirX);
 

@@ -14,6 +14,8 @@ public class CannonActions : MonoBehaviour
 
     public float sidewaysMove = 100.0f;
 
+    private float scale = 0.35f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class CannonActions : MonoBehaviour
 
         SphereCollider SC = cannonball.AddComponent<SphereCollider>();
 
-        rb.velocity = Power * CannonBall_Spawn.forward;
+        rb.velocity = Power * CannonBall_Spawn.forward * scale;
 
     }
 }
