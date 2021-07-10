@@ -6,6 +6,8 @@ public class CannonActions : MonoBehaviour
 {
     public Rigidbody rb;
 
+    public Rigidbody barrel;
+
     private Transform CannonBall_Spawn = null;
 
     public GameObject Cannonball = null;
@@ -53,7 +55,16 @@ public class CannonActions : MonoBehaviour
 
         SphereCollider SC = cannonball.AddComponent<SphereCollider>();
 
-        rb.velocity = Power * CannonBall_Spawn.forward * scale;
+        /*
+        if (barrel.transform != null) {
+            rb.AddForce(Power * barrel.transform.up * 25.0f);
+        }
+        */
+
+
+
+        rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
+
 
     }
 }

@@ -3931,6 +3931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  barrel: {fileID: 917509839}
   Cannonball: {fileID: 100000, guid: ac147cc4a2297604bb4e5bf9099ebfe8, type: 3}
   Power: 30
   sidewaysMove: 100
