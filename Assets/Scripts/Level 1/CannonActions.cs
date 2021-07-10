@@ -6,7 +6,7 @@ public class CannonActions : MonoBehaviour
 {
     public Rigidbody rb;
 
-    private Transform CannonBall_Spawn = null;
+    public Transform CannonBall_Spawn;
 
     public GameObject Cannonball = null;
 
@@ -19,7 +19,7 @@ public class CannonActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CannonBall_Spawn = transform.Find("CannonBall_Spawn");
+        //CannonBall_Spawn = transform.Find("CannonBall_Spawn");
     }
 
     // Update is called once per frame
