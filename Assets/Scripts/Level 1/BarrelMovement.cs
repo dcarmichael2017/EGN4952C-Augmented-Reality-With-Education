@@ -13,36 +13,36 @@ public class BarrelMovement : MonoBehaviour
     private float upConstraint;
     private float downConstraint;
 
-    private float rotationX = 90f;
+    private float rotationX = -90f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        upConstraint = 72f;
-        downConstraint = 90f;
+        upConstraint = -72f; //-12
+        downConstraint = -90f;
     }
 
     // Update is called once per frame
     void Update()
     {
         //UI D-pad input
-        if (upArrow && rotationX > upConstraint)
+        if (upArrow && rotationX < upConstraint)
         {
             rotateUp();
         }
 
-        if (downArrow && rotationX < downConstraint)
+        if (downArrow && rotationX > downConstraint)
         {
             rotateDown();
         }
 
 
         //Arrow keys input
-        if (Input.GetKeyDown("up") && rotationX > upConstraint)
+        if (Input.GetKeyDown("up") && rotationX < upConstraint)
         {
             rotateUp();
-        } else if (Input.GetKeyDown("down") && rotationX < downConstraint)
+        } else if (Input.GetKeyDown("down") && rotationX > downConstraint)
         {
             rotateDown();
         }
@@ -78,14 +78,15 @@ public class BarrelMovement : MonoBehaviour
     private void rotateUp()
     {
         //rotate up
-        rotationX = rotationX - 1f;
-        rb.rotation = Quaternion.Euler(rotationX, 0, 0);
+        rotationX = rotationX + 1f;
+        rb.rotation = Quaternion.Euler(rotationX, 180.0f, 0.0f);
+        //rb.rotation - rb.rotation * 
     }
 
     private void rotateDown()
     {
         //rotate down
-        rotationX = rotationX + 1f;
-        rb.rotation = Quaternion.Euler(rotationX, 0, 0);
+        rotationX = rotationX - 1f;
+        rb.rotation = Quaternion.Euler(rotationX, 180.0f, 0.0f);
     }
 }
