@@ -31,11 +31,14 @@ public class PowerAndSize : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (plusButton){
+		if (plusButton)
+		{
 			cannonBall.mass = cannonBall.mass + 5 * scale;
 			plusButton = false;
 		}
-		if (minusButton && (cannonBall.mass - 5) >= massConstraint){
+		//if (minusButton && (cannonBall.mass - 5) >= massConstraint)
+		if (minusButton && (cannonBall.mass) >= massConstraint)
+		{
 			cannonBall.mass = cannonBall.mass - 5 * scale;
 			minusButton = false;
 		}

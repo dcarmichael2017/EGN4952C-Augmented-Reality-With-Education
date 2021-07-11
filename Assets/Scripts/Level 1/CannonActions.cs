@@ -15,7 +15,7 @@ public class CannonActions : MonoBehaviour
 
     public float sidewaysMove = 100.0f;
 
-    private float scale = 0.35f;
+    private float scale = 1f;
 
     // Start is called before the first frame update
     void Start()
