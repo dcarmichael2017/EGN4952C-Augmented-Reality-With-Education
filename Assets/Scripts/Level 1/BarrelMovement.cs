@@ -5,6 +5,8 @@ using UnityEngine;
 public class BarrelMovement : MonoBehaviour
 {
     public float speed = 25f;
+
+    public Rigidbody cannonBase;
     private Rigidbody rb;
 
     public bool upArrow;
@@ -14,25 +16,27 @@ public class BarrelMovement : MonoBehaviour
     private float downConstraint;
 
     private float rotationX = -90f;
+    private float scale = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        upConstraint = -72f; //-12
+        upConstraint = -72f;
         downConstraint = -90f;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //UI D-pad input
-        if (upArrow && rotationX < upConstraint)
+        if (upArrow) //&& rotationX < upConstraint
         {
             rotateUp();
         }
 
-        if (downArrow && rotationX > downConstraint)
+        if (downArrow) //&& rotationX > downConstraint
         {
             rotateDown();
         }
@@ -77,16 +81,17 @@ public class BarrelMovement : MonoBehaviour
 
     private void rotateUp()
     {
+        float x = Time.deltaTime * speed;
         //rotate up
         rotationX = rotationX + 1f;
-        rb.rotation = Quaternion.Euler(rotationX, 180.0f, 0.0f);
-        //rb.rotation - rb.rotation * 
+        rb.transform.Rotate(rotationX * scale * x, 0, 0);
     }
 
     private void rotateDown()
     {
+        float x = Time.deltaTime * speed;
         //rotate down
         rotationX = rotationX - 1f;
-        rb.rotation = Quaternion.Euler(rotationX, 180.0f, 0.0f);
+        rb.transform.Rotate(rotationX * scale * x, 0, 0);
     }
 }

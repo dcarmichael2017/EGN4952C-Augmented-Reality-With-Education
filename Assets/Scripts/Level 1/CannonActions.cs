@@ -54,15 +54,12 @@ public class CannonActions : MonoBehaviour
 
         SphereCollider SC = cannonball.AddComponent<SphereCollider>();
 
-        /*
+        
         if (barrel.transform != null) {
             rb.AddForce(Power * barrel.transform.up * 25.0f);
         }
-        */
-
-
-
-        rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
+        
+        //rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
 
 
     }
