@@ -31,12 +31,12 @@ public class BarrelMovement : MonoBehaviour
     {
 
         //UI D-pad input
-        if (upArrow) //&& rotationX < upConstraint
+        if (upArrow && rotationX < upConstraint) //&& rotationX < upConstraint
         {
             rotateUp();
         }
 
-        if (downArrow) //&& rotationX > downConstraint
+        if (downArrow && rotationX > downConstraint) //&& rotationX > downConstraint
         {
             rotateDown();
         }
@@ -84,7 +84,9 @@ public class BarrelMovement : MonoBehaviour
         float x = Time.deltaTime * speed;
         //rotate up
         rotationX = rotationX + 1f;
-        rb.transform.Rotate(rotationX * scale * x, 0, 0);
+        //rb.transform.Rotate(rotationX * scale * x, 0, 0);
+
+        rb.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(1, 0, 0));
     }
 
     private void rotateDown()
@@ -92,6 +94,8 @@ public class BarrelMovement : MonoBehaviour
         float x = Time.deltaTime * speed;
         //rotate down
         rotationX = rotationX - 1f;
-        rb.transform.Rotate(rotationX * scale * x, 0, 0);
+        //rb.transform.Rotate(rotationX * scale * x, 0, 0);
+
+        rb.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(-1, 0, 0));
     }
 }

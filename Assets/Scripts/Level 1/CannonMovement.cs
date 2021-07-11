@@ -41,9 +41,13 @@ public class CannonMovement : MonoBehaviour
             rotationZ -= 2f * x;
             //rb.transform.Rotate(0, 0, rotationZ);
             //cameraRotator.transform.Rotate(0, rotationZ, 0);
-            rb.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
-            barrel.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
-            cameraRotator.transform.rotation = Quaternion.Euler(0, rotationZ + cameraOffset, 0);
+            rb.transform.rotation = Quaternion.Euler(rb.transform.rotation.eulerAngles + new Vector3(0, 0, -1));
+            barrel.transform.rotation = Quaternion.Euler(new Vector3(barrel.transform.rotation.eulerAngles.x, rb.transform.rotation.eulerAngles.y, rb.transform.rotation.eulerAngles.z) + new Vector3(0, 0, -1)); //use the cannon's y and z rotation
+            cameraRotator.transform.rotation = Quaternion.Euler(cameraRotator.transform.rotation.eulerAngles + new Vector3(0, -1, 0));
+
+            //rb.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
+            //barrel.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
+            //cameraRotator.transform.rotation = Quaternion.Euler(0, rotationZ + cameraOffset, 0);
         }
 
         if (rightArrow)
@@ -52,9 +56,13 @@ public class CannonMovement : MonoBehaviour
             rotationZ += 2f * x;
             //rb.transform.Rotate(0, 0, rotationZ);
             //cameraRotator.transform.Rotate(0, rotationZ, 0);
-            rb.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
-            barrel.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
-            cameraRotator.transform.rotation = Quaternion.Euler(0, rotationZ + cameraOffset, 0);
+            rb.transform.rotation = Quaternion.Euler(rb.transform.rotation.eulerAngles + new Vector3(0, 0, 1));
+            barrel.transform.rotation = Quaternion.Euler(new Vector3(barrel.transform.rotation.eulerAngles.x, rb.transform.rotation.eulerAngles.y, rb.transform.rotation.eulerAngles.z) + new Vector3(0, 0, 1)); //use the cannon's y and z rotation
+            cameraRotator.transform.rotation = Quaternion.Euler(cameraRotator.transform.rotation.eulerAngles + new Vector3(0, 1, 0));
+
+            //rb.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
+            //barrel.transform.rotation = Quaternion.Euler(-90, 180, rotationZ);
+            //cameraRotator.transform.rotation = Quaternion.Euler(0, rotationZ + cameraOffset, 0);
         }
 
         //accelerometer movement
