@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     public float CurSpeed;
 
     public GameObject healthBarCanvas;
-    public TMP_Text scoreText;
+    private TMP_Text scoreText;
 
     private Animator animator;
 
@@ -87,7 +87,7 @@ public class EnemyController : MonoBehaviour
         {
             //Damage calculations
             Vector3 vel = collision.relativeVelocity;
-            float damageModifier = -0.5f * (float) Math.Log(vel.magnitude)/difficultyLevel; //divided by enemy level (1, 2, 3)
+            float damageModifier = 0.5f * (float) Math.Log(vel.magnitude)/difficultyLevel; //divided by enemy level (1, 2, 3)
             ModifyHealth(damageScale * damageModifier);
 
             //If health is above zero, play hit animation
