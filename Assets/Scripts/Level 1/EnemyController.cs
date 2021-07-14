@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,8 +14,13 @@ public class EnemyController : MonoBehaviour
     private double score = 0;
     private int difficultyLevel = 1;
 
+    private Vector3 previousPosition;
+    public float CurSpeed;
+
     public GameObject healthBarCanvas;
     public TMP_Text scoreText;
+
+    private Animator animator;
 
     //null check
     public event Action<float> OnHealthPctChanged = delegate { };
@@ -24,8 +30,14 @@ public class EnemyController : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBarCanvas.gameObject.transform.localScale = new Vector3(0, 0, 0);
-        scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
-        score = double.Parse(scoreText.text);
+
+        try
+        {
+            animator = GetComponent<Animator>();
+            scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
+            score = double.Parse(scoreText.text);
+        }
+        catch (Exception e) { Debug.Log(e); }
     }
 
     // Update is called once per frame
@@ -34,19 +46,24 @@ public class EnemyController : MonoBehaviour
         if (currentHealth < maxHealth)
             healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
-        if (currentHealth <= 0)
-        {
-            updateScore();
-            Destroy(gameObject);
-        }
 
         //Update score variable if another enemy is damaged
-        if (scoreText.havePropertiesChanged)
+        try
         {
+            if (scoreText.havePropertiesChanged)
+            {
+                updateScore();
+            }
+
             updateScore();
         }
 
-        updateScore();
+        catch (Exception e) { Debug.Log(e); }
+
+        Vector3 CurMove = transform.position - previousPosition;
+        CurSpeed = CurMove.magnitude / Time.deltaTime;
+        previousPosition = transform.position;
+        animator.SetFloat("Speed", CurSpeed);
 
 
     }
@@ -68,13 +85,33 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Projectile"))
         {
+            //Damage calculations
             Vector3 vel = collision.relativeVelocity;
             float damageModifier = -0.5f * (float) Math.Log(vel.magnitude)/difficultyLevel; //divided by enemy level (1, 2, 3)
             ModifyHealth(damageScale * damageModifier);
+
+            //If health is above zero, play hit animation
+            if(currentHealth>0)
+                animator.SetTrigger("Hit");
+
+            else if (currentHealth <= 0)
+            {
+                updateScore();
+                animator.SetTrigger("Dead");
+                GetComponent<NavMeshAgent>().speed = 0;
+
+                float animTime = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+
+                Destroy(gameObject, animTime + 2);
+            }
+
+            //Destroy cannonball on collision
+            Destroy(collision.collider.gameObject);
         }
 
         else if (collision.gameObject.CompareTag("Castle"))
         {
+            //add hit animation here?
             Destroy(gameObject);
         }
     }
