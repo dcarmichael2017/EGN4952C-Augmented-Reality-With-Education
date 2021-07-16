@@ -17,6 +17,9 @@ public class CannonActions : MonoBehaviour
 
     private float scale = 1f;
 
+    private float nextShot = 0f;
+    private float fireRate = 0.75f; //seconds
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,20 +52,25 @@ public class CannonActions : MonoBehaviour
 
     public void ShootCannonBall()
     {
-        GameObject cannonball = Instantiate(Cannonball, CannonBall_Spawn.position, Quaternion.identity);
-
-        Rigidbody rb = cannonball.AddComponent<Rigidbody>();
-
-        SphereCollider SC = cannonball.AddComponent<SphereCollider>();
-
-        
-        /*if (barrel.transform != null) 
+        if (Time.time > nextShot)
         {
-            rb.AddForce(Power * CannonBall_Spawn.forward * scale);
-        }*/
-        
-        rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
+            //next time cannon can shoot (in seconds)
+            nextShot = Time.time + fireRate;
 
+            GameObject cannonball = Instantiate(Cannonball, CannonBall_Spawn.position, Quaternion.identity);
+
+            Rigidbody rb = cannonball.AddComponent<Rigidbody>();
+
+            SphereCollider SC = cannonball.AddComponent<SphereCollider>();
+
+
+            /*if (barrel.transform != null) 
+            {
+                rb.AddForce(Power * CannonBall_Spawn.forward * scale);
+            }*/
+
+            rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
+        }
 
     }
 }

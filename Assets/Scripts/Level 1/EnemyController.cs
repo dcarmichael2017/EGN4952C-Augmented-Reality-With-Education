@@ -38,6 +38,18 @@ public class EnemyController : MonoBehaviour
             score = double.Parse(scoreText.text);
         }
         catch (Exception e) { Debug.Log(e); }
+
+        //set difficultyLevel (higher level reduces damage dealt by cannonballs to enemies and increases damage dealt to castle)
+        if (GameValues.currentDifficulty == GameValues.Difficulties.Easy)
+        {
+            difficultyLevel = 1;
+        } else if (GameValues.currentDifficulty == GameValues.Difficulties.Medium)
+        {
+            difficultyLevel = 2;
+        } else if (GameValues.currentDifficulty == GameValues.Difficulties.Hard)
+        {
+            difficultyLevel = 3;
+        }
     }
 
     // Update is called once per frame
