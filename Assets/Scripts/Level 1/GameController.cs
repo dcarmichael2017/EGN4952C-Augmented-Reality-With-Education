@@ -37,5 +37,6 @@ public class GameController : MonoBehaviour
         FinishLevel.gameObject.SetActive(true);
         FinishLevel.enabled = true;
         leaderboards.PostToLeaderBoard();
+        Debug.Log("posted to leaderboard");
     }
 }

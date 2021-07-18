@@ -263,6 +263,8 @@ public class AuthenticationManager : MonoBehaviour
             FB.ActivateApp();
         }
 
+        DontDestroyOnLoad(this.gameObject);
+
 
     }
 

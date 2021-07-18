@@ -31,6 +31,7 @@ public class leaderboard : MonoBehaviour
         {
             //Username = (_authenticationManager.GetUsersId());
             Username = GameValues.currentUser;
+            Debug.Log("CURRENT USER: " + Username);
         }
         catch { }
     }
