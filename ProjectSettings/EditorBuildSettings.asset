@@ -32,12 +32,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/FacebookSDK/Examples/Pay.unity
     guid: 3ee189cdb21ea4bdb9d7022a0780c44c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/Level1.unity
-    guid: ef056636dc1bd2a4f9d260d0e77e15f8
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Physics Level.unity
     guid: dd9328da51f9fbf49ab592e386b765c1
