@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
+    public GameObject FinishLevel;
     DisplayStats stats;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class GameController : MonoBehaviour
         //Basic method to find how many enemies are on the level at once.
         stats.SetAliveEnemies(GameObject.FindGameObjectsWithTag("Enemy").Length);
         if (stats.totalEnemiesAmount == stats.deployedEnemiesAmount && stats.aliveEnemiesAmount == 0)
-            Debug.Log("ALL DEAD");
+            FinishLevel.SetActive(true); ;
     }
 }
