@@ -1,18 +1,16 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace SemihOrhan.WaveOne.Demo
-{
-#pragma warning disable 0649
     public class DisplayStats : MonoBehaviour
     {
-        [SerializeField] private Text totalEnemiesText;
-        [SerializeField] private Text deployedEnemiesText;
-        [SerializeField] private Text AliveEnemiesText;
+        [SerializeField] private TMP_Text totalEnemiesText;
+        [SerializeField] private TMP_Text deployedEnemiesText;
+        [SerializeField] private TMP_Text AliveEnemiesText;
 
-        private int totalEnemiesAmount;
-        private int deployedEnemiesAmount;
-        private int aliveEnemiesAmount;
+        public int totalEnemiesAmount;
+        public int deployedEnemiesAmount;
+        public int aliveEnemiesAmount;
 
         public void SetTotalEnemies(int amount)
         {
@@ -28,8 +26,7 @@ namespace SemihOrhan.WaveOne.Demo
 
         public void SetAliveEnemies(int amount)
         {
-            aliveEnemiesAmount += amount;
+            aliveEnemiesAmount = amount;
             AliveEnemiesText.text = "Alive Enemies: " + aliveEnemiesAmount;
         }
     }
-}
