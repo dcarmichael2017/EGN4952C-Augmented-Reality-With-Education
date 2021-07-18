@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CastleHealth : MonoBehaviour
 {
@@ -13,10 +14,17 @@ public class CastleHealth : MonoBehaviour
     private int currentHealth;
     private int difficultyLevel = 1;
 
+    public GameObject DeathCanvas;
+
+    public bool reloadButton = false;
+
+    public bool mainMenuButton = false;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         currentHealth = maxHealth;
+        DeathCanvas.SetActive(false);
 
         //set difficultyLevel (higher level increases damage dealt to castle)
         if (GameValues.currentDifficulty == GameValues.Difficulties.Easy)
@@ -36,7 +44,9 @@ public class CastleHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth <= 0){
+            Death();
+        }
     }
 
     public void ModifyHealth(int amount)
@@ -52,6 +62,22 @@ public class CastleHealth : MonoBehaviour
         {
             ModifyHealth(-10 * difficultyLevel);
 
+        }
+    }
+
+    private void Death(){
+        DeathCanvas.SetActive(true);
+    }
+
+    public void Buttons(string buttons){
+        switch (buttons)
+        {
+            case "RELOAD":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                break;
+            case "MAIN":
+                SceneManager.LoadScene("MainMenu");
+                break;
         }
     }
 }
