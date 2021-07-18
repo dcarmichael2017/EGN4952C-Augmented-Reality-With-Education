@@ -19,19 +19,20 @@ public class leaderboard : MonoBehaviour
     [Obsolete]
     void Start()
     {
-        Username = GameValues.currentUser;
+        //Username = GameValues.currentUser;
         
         GetScoresForLeaderBoard();
     }
 
     // Update is called once per frame
+    [Obsolete]
     void Update()
     {
         try
         {
             //Username = (_authenticationManager.GetUsersId());
-            Username = GameValues.currentUser;
-            Debug.Log("CURRENT USER: " + Username);
+            //Username = GameValues.currentUser;
+            //Debug.Log("CURRENT USER: " + Username);
         }
         catch { }
     }
@@ -67,9 +68,9 @@ public class leaderboard : MonoBehaviour
     }
 
     [Obsolete]
-    public void PostToLeaderBoard()
+    public void PostToLeaderBoard(string username)
     {
-        if (Username != null)
+        if (username != null)
         {
             EventData leaderboardData = new EventData();
             leaderboardData.Clicks = score;
