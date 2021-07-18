@@ -16,10 +16,6 @@ public class CastleHealth : MonoBehaviour
 
     public GameObject DeathCanvas;
 
-    public bool reloadButton = false;
-
-    public bool mainMenuButton = false;
-
     // Start is called before the first frame update
     void Start()
     {   
@@ -67,17 +63,5 @@ public class CastleHealth : MonoBehaviour
 
     private void Death(){
         DeathCanvas.SetActive(true);
-    }
-
-    public void Buttons(string buttons){
-        switch (buttons)
-        {
-            case "RELOAD":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                break;
-            case "MAIN":
-                SceneManager.LoadScene("MainMenu");
-                break;
-        }
     }
 }

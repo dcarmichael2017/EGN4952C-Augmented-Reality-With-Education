@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public Canvas FinishLevel;
+    public GameObject DeathCanvas;
     DisplayStats stats;
     leaderboard leaderboards;
     bool updatedLeaderBoard = false;
@@ -28,6 +30,29 @@ public class GameController : MonoBehaviour
             if(!updatedLeaderBoard)
             LevelComplete();
 #pragma warning restore CS0612 // Type or member is obsolete
+    }
+
+    public void Buttons(string buttons)
+    {
+        switch (buttons)
+        {
+            case "RELOAD":
+                FinishLevel.enabled = false;
+                DeathCanvas.SetActive(false);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                break;
+            case "MAIN":
+                FinishLevel.enabled = false;
+                DeathCanvas.SetActive(false);
+                SceneManager.LoadScene("MainMenu");
+                break;
+            case "REFRESHLEADER":
+                string Username = GameValues.currentUser;
+#pragma warning disable CS0612 // Type or member is obsolete
+                leaderboards.PostToLeaderBoard(Username);
+#pragma warning restore CS0612 // Type or member is obsolete
+                break;
+        }
     }
 
     [System.Obsolete]

@@ -70,7 +70,7 @@ public class leaderboard : MonoBehaviour
     [Obsolete]
     public void PostToLeaderBoard(string username)
     {
-        if (username != null)
+        if (username != null && username != " ")
         {
             EventData leaderboardData = new EventData();
             leaderboardData.Clicks = score;
