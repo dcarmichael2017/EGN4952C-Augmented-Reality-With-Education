@@ -111,6 +111,7 @@ public class EnemyController : MonoBehaviour
                 updateScore();
                 animator.SetTrigger("Dead");
                 GetComponent<NavMeshAgent>().speed = 0;
+                GetComponent<Animator>().applyRootMotion = false;
 
                 float animTime = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
 
