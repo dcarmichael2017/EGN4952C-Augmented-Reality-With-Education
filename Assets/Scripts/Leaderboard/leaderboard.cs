@@ -10,13 +10,13 @@ using TMPro;
 
 public class leaderboard : MonoBehaviour
 {
-    public string Username;
-    public int Clicks;
+    private string Username;
+    private int score;
     public  TMP_Text leaderBoardText;
 
     public AuthenticationManager _authenticationManager;
 
-
+    [Obsolete]
     void Start()
     {
         //Username = "Alex";
@@ -67,33 +67,36 @@ public class leaderboard : MonoBehaviour
     [Obsolete]
     public void PostToLeaderBoard()
     {
-        EventData leaderboardData = new EventData();
-        leaderboardData.Clicks = Clicks;
-        string json = JsonUtility.ToJson(leaderboardData);
-        byte[] bodyRaw = new System.Text.UTF8Encoding().GetBytes(json);
+        if (Username != null)
+        {
+            EventData leaderboardData = new EventData();
+            leaderboardData.Clicks = score;
+            string json = JsonUtility.ToJson(leaderboardData);
+            byte[] bodyRaw = new System.Text.UTF8Encoding().GetBytes(json);
 
-        UnityWebRequest request;
+            UnityWebRequest request;
 
-        if (Array.Exists(eventLeaderBoard, x => x.Username == Username))
-            for (int i = 0; i < eventLeaderBoard.Count(); i++)
-                if (eventLeaderBoard[i].Username == Username)
-                {
-                    request = UnityWebRequest.Delete(DNS + "/" + eventLeaderBoard[i].id);
-                    request.SendWebRequest();
-                }
+            if (Array.Exists(eventLeaderBoard, x => x.Username == Username))
+                for (int i = 0; i < eventLeaderBoard.Count(); i++)
+                    if (eventLeaderBoard[i].Username == Username)
+                    {
+                        request = UnityWebRequest.Delete(DNS + "/" + eventLeaderBoard[i].id);
+                        request.SendWebRequest();
+                    }
 
-        leaderboardData.Username = Username;
-        json = JsonUtility.ToJson(leaderboardData);
-        bodyRaw = new System.Text.UTF8Encoding().GetBytes(json);
-        request = new UnityWebRequest(DNS, UnityWebRequest.kHttpVerbPOST);
-        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        request.chunkedTransfer = false;
-        request.SetRequestHeader("Content-type", "application/json");
-        request.SendWebRequest();
+            leaderboardData.Username = Username;
+            json = JsonUtility.ToJson(leaderboardData);
+            bodyRaw = new System.Text.UTF8Encoding().GetBytes(json);
+            request = new UnityWebRequest(DNS, UnityWebRequest.kHttpVerbPOST);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.chunkedTransfer = false;
+            request.SetRequestHeader("Content-type", "application/json");
+            request.SendWebRequest();
 
 
 
-        GetScoresForLeaderBoard();
+            GetScoresForLeaderBoard();
+        }
     }
 
     [Obsolete]
