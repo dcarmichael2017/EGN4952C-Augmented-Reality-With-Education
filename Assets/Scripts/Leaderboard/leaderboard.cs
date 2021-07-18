@@ -19,7 +19,7 @@ public class leaderboard : MonoBehaviour
     [Obsolete]
     void Start()
     {
-        //Username = "Alex";
+        Username = GameValues.currentUser;
         
         GetScoresForLeaderBoard();
     }
@@ -29,7 +29,8 @@ public class leaderboard : MonoBehaviour
     {
         try
         {
-            Username = (_authenticationManager.GetUsersId());
+            //Username = (_authenticationManager.GetUsersId());
+            Username = GameValues.currentUser;
         }
         catch { }
     }

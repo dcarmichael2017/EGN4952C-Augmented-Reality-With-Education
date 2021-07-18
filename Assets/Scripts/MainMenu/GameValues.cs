@@ -8,4 +8,6 @@ public class GameValues : MonoBehaviour
 
     public static Difficulties currentDifficulty = Difficulties.Easy; //default easy
 
+    public static string currentUser = "";
+
 }
