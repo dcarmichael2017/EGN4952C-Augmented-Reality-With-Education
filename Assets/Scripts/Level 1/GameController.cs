@@ -36,7 +36,8 @@ public class GameController : MonoBehaviour
         updatedLeaderBoard = true;
         FinishLevel.gameObject.SetActive(true);
         FinishLevel.enabled = true;
-        leaderboards.PostToLeaderBoard();
+        string Username = GameValues.currentUser;
+        leaderboards.PostToLeaderBoard(Username);
         Debug.Log("posted to leaderboard");
     }
 }

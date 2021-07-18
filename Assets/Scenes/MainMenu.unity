@@ -2135,10 +2135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636d21a2b988fd34f927b2933ff51f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Username: 
-  Clicks: 0
   leaderBoardText: {fileID: 106484488}
-  _authenticationManager: {fileID: 1364466473}
+  _authenticationManager: {fileID: 0}
   eventLeaderBoard: []
 --- !u!1001 &339334045
 PrefabInstance:
@@ -5783,18 +5781,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1962331054}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1364466473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364466468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f489ac0d9e2a54cb21ad8da6066aa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1364466474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6147,6 +6133,49 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2125878100}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1578156602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578156604}
+  - component: {fileID: 1578156603}
+  m_Layer: 0
+  m_Name: AuthenticationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1578156603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578156602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f489ac0d9e2a54cb21ad8da6066aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1578156604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578156602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.758138, y: 0.43322158, z: -15.118437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1580585857 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4191295223173602103, guid: 5f7e83c9aa7b64a61802f2f2db28497e,
