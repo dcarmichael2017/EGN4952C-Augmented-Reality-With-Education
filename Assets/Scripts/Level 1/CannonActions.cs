@@ -15,6 +15,8 @@ public class CannonActions : MonoBehaviour
 
     public float sidewaysMove = 100.0f;
 
+    private PowerAndSize powerAndSize;
+
     private float scale = 1f;
 
     private float nextShot = 0f;
@@ -24,6 +26,8 @@ public class CannonActions : MonoBehaviour
     void Start()
     {
         //CannonBall_Spawn = transform.Find("CannonBall_Spawn");
+
+        powerAndSize = GetComponent<PowerAndSize>();
     }
 
 
@@ -59,7 +63,11 @@ public class CannonActions : MonoBehaviour
 
             GameObject cannonball = Instantiate(Cannonball, CannonBall_Spawn.position, Quaternion.identity);
 
-            Rigidbody rb = cannonball.AddComponent<Rigidbody>();
+            Rigidbody cannonballRB = cannonball.GetComponent<Rigidbody>();
+
+            cannonballRB.mass = powerAndSize.getCannonBallMass();
+
+            //Rigidbody rb = cannonball.AddComponent<Rigidbody>();
 
             SphereCollider SC = cannonball.AddComponent<SphereCollider>();
 
@@ -69,7 +77,9 @@ public class CannonActions : MonoBehaviour
                 rb.AddForce(Power * CannonBall_Spawn.forward * scale);
             }*/
 
-            rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
+            //rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
+
+            cannonballRB.velocity = Power * CannonBall_Spawn.forward * scale;
         }
 
     }
