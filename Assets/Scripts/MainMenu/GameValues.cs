@@ -10,4 +10,6 @@ public class GameValues : MonoBehaviour
 
     public static string currentUser = "";
 
+    public static double score;
+
 }

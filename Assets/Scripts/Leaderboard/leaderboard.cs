@@ -11,7 +11,7 @@ using TMPro;
 public class leaderboard : MonoBehaviour
 {
     private string Username;
-    private int score;
+    private double score;
     public  TMP_Text leaderBoardText;
 
     public AuthenticationManager _authenticationManager;
@@ -19,7 +19,7 @@ public class leaderboard : MonoBehaviour
     [Obsolete]
     void Start()
     {
-        //Username = GameValues.currentUser;
+        Username = null;
         
         GetScoresForLeaderBoard();
     }
@@ -30,7 +30,8 @@ public class leaderboard : MonoBehaviour
     {
         try
         {
-            //Username = (_authenticationManager.GetUsersId());
+            Username = (_authenticationManager.GetUsersId());
+            score = GameValues.score;
             //Username = GameValues.currentUser;
             //Debug.Log("CURRENT USER: " + Username);
         }
@@ -42,7 +43,7 @@ public class leaderboard : MonoBehaviour
     {
         public int id;
         public string Username;
-        public int Clicks;
+        public double Clicks;
     }
 
     public EventData[] eventLeaderBoard;
@@ -68,9 +69,9 @@ public class leaderboard : MonoBehaviour
     }
 
     [Obsolete]
-    public void PostToLeaderBoard(string username)
+    public void PostToLeaderBoard()
     {
-        if (username != null && username != " ")
+        if (Username != null)
         {
             EventData leaderboardData = new EventData();
             leaderboardData.Clicks = score;

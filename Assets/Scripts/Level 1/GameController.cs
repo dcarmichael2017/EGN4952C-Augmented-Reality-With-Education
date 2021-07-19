@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     DisplayStats stats;
     leaderboard leaderboards;
     bool updatedLeaderBoard = false;
+    float time = 0;
 
 
     // Start is called before the first frame update
@@ -30,6 +31,21 @@ public class GameController : MonoBehaviour
             if(!updatedLeaderBoard)
             LevelComplete();
 #pragma warning restore CS0612 // Type or member is obsolete
+
+        if (FinishLevel.enabled)
+        {
+            if (time > 5)
+            {
+#pragma warning disable CS0612 // Type or member is obsolete
+                leaderboards.GetScoresForLeaderBoard();
+#pragma warning restore CS0612 // Type or member is obsolete
+                time = 0;
+            }
+            else
+            {
+                time += Time.deltaTime;
+            }
+        }
     }
 
     public void Buttons(string buttons)
@@ -47,9 +63,8 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("MainMenu");
                 break;
             case "REFRESHLEADER":
-                string Username = GameValues.currentUser;
 #pragma warning disable CS0612 // Type or member is obsolete
-                leaderboards.PostToLeaderBoard(Username);
+                leaderboards.PostToLeaderBoard();
 #pragma warning restore CS0612 // Type or member is obsolete
                 break;
         }
@@ -61,8 +76,8 @@ public class GameController : MonoBehaviour
         updatedLeaderBoard = true;
         FinishLevel.gameObject.SetActive(true);
         FinishLevel.enabled = true;
-        string Username = GameValues.currentUser;
-        leaderboards.PostToLeaderBoard(Username);
+        //string Username = GameValues.currentUser;
+        leaderboards.PostToLeaderBoard();
         Debug.Log("posted to leaderboard");
     }
 }

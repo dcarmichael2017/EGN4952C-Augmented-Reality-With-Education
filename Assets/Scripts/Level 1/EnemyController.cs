@@ -133,5 +133,6 @@ public class EnemyController : MonoBehaviour
     {
         //Update score variable
         score = double.Parse(scoreText.text);
+        GameValues.score = score;
     }
 }
