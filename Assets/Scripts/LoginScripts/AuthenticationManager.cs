@@ -250,6 +250,14 @@ public class AuthenticationManager : MonoBehaviour
 
     void Awake()
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+        } else
+        {
+            Debug.Log("There is internet!!!");
+        }
+
         Debug.Log("AuthenticationManager: Awake");
         _provider = new AmazonCognitoIdentityProviderClient(new Amazon.Runtime.AnonymousAWSCredentials(), Region);
 

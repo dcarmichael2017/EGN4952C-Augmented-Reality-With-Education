@@ -1,0 +1,53 @@
+<linker>
+
+<assembly fullname="UnityEngine">
+<type fullname="UnityEngine.Experimental.Networking.UnityWebRequest" preserve="all" />
+<type fullname="UnityEngine.Experimental.Networking.UploadHandlerRaw" preserve="all" />
+<type fullname="UnityEngine.Experimental.Networking.UploadHandler" preserve="all" />
+<type fullname="UnityEngine.Experimental.Networking.DownloadHandler" preserve="all" />
+<type fullname="UnityEngine.Experimental.Networking.DownloadHandlerBuffer" preserve="all" />
+</assembly>
+<assembly fullname="Google.Protobuf"/>
+<assembly fullname="System.Runtime.CompilerServices.Unsafe"/>
+<assembly fullname="websocket-sharp"/>
+<assembly fullname="AWSSDK.Core" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.CognitoIdentity" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.CognitoIdentityProvider" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.CognitoSync" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.IdentityManagement" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.SecurityToken" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.DynamoDBv2" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.Lambda" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.Extensions.CognitoAuthentication" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+<assembly fullname="AWSSDK.GameLift" preserve="all">
+<type fullname ="Amazon.*" preserve = "all" />
+<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+</assembly>
+</linker>
