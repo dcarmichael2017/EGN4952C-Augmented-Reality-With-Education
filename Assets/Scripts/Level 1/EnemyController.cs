@@ -112,7 +112,7 @@ public class EnemyController : MonoBehaviour
                 animator.SetTrigger("Dead");
                 GetComponent<NavMeshAgent>().speed = 0;
                 GetComponent<Animator>().applyRootMotion = false;
-
+                GetComponent<CapsuleCollider>().radius = (float)0.01;
                 float animTime = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
 
                 Destroy(gameObject, animTime + 2);
