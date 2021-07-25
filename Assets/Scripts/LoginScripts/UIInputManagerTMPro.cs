@@ -21,6 +21,7 @@ public class UIInputManagerTMPro : MonoBehaviour
     public Button logoutButton;
     public Button loginButtonMainMenu;
     public Button refreshRankingsButton;
+    public Button exitButton;
 
     //Input Fields
     public TMP_InputField emailFieldLogin;
@@ -206,6 +207,7 @@ public class UIInputManagerTMPro : MonoBehaviour
         loginButton.onClick.AddListener(onLoginClicked);
         fbLoginButton.onClick.AddListener(onFBLoginClicked);
         logoutButton.onClick.AddListener(onLogoutClick);
+        exitButton.onClick.AddListener(OnExitClicked);
     }
 
     void Update()
@@ -257,5 +259,11 @@ public class UIInputManagerTMPro : MonoBehaviour
         _lambdaManager = FindObjectOfType<LambdaManager>();
 
         _fields = new List<Selectable> { emailFieldLogin, passwordFieldLogin, loginButton, emailField, usernameField, passwordField, registerButton };
+    }
+
+    private void OnExitClicked()
+    {
+        Debug.Log("Quit Application");
+        Application.Quit();
     }
 }
