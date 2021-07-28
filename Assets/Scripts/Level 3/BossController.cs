@@ -22,7 +22,7 @@ public class BossController : MonoBehaviour
 
     private Animator animator;
 
-    public float lookRadius = 10f;
+    public float lookRadius= 20f;
 
     Transform target;
     NavMeshAgent agent;
@@ -69,10 +69,15 @@ public class BossController : MonoBehaviour
 
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius)
+        if (distance <= lookRadius && distance >= lookRadius/2)
         {
             agent.SetDestination(target.position);
         }
+        else if (distance <= lookRadius/2)
+        {
+            agent.speed = 0;
+        }
+
 
 
         //Update score variable if another enemy is damaged
@@ -100,6 +105,8 @@ public class BossController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, lookRadius / 2);
     }
 
     public void ModifyHealth(float amount)
