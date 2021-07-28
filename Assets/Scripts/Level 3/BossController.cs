@@ -26,6 +26,7 @@ public class BossController : MonoBehaviour
 
     Transform target;
     NavMeshAgent agent;
+    public float actionTimer;
 
     //null check
     public event Action<float> OnHealthPctChanged = delegate { };
@@ -72,10 +73,17 @@ public class BossController : MonoBehaviour
         if (distance <= lookRadius && distance >= lookRadius/2)
         {
             agent.SetDestination(target.position);
+            actionTimer = 0;
         }
         else if (distance <= lookRadius/2)
         {
             agent.speed = 0;
+            actionTimer += Time.deltaTime;
+            if (actionTimer >= 4)
+            {
+                animator.SetTrigger("Shoot");
+                actionTimer = 0;
+            }
         }
 
 
