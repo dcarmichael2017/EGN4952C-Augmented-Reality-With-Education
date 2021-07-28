@@ -43,6 +43,7 @@ public class BossController : MonoBehaviour
             scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
             score = double.Parse(scoreText.text);
             agent = GetComponent<NavMeshAgent>();
+            agent.speed = 0;
             target = PlayerManager.instance.player.transform;
         }
         catch (Exception e) { Debug.Log(e); }
@@ -65,8 +66,11 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth < maxHealth)
-            healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
+        //if (currentHealth < maxHealth)
+        // healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
+
+        if (actionTimer > (float)0.01)
+         healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
         float distance = Vector3.Distance(target.position, transform.position);
 
@@ -79,6 +83,8 @@ public class BossController : MonoBehaviour
         {
             agent.speed = 0;
             actionTimer += Time.deltaTime;
+            float currentHealthPct = actionTimer / (float) 4;
+            OnHealthPctChanged(currentHealthPct);
             if (actionTimer >= 4)
             {
                 animator.SetTrigger("Shoot");
@@ -109,6 +115,11 @@ public class BossController : MonoBehaviour
 
     }
 
+    public void StartLevel()
+    {
+        agent.speed = 1;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -122,7 +133,7 @@ public class BossController : MonoBehaviour
         currentHealth += amount;
 
         float currentHealthPct = (float)currentHealth / (float)maxHealth;
-        OnHealthPctChanged(currentHealthPct);
+        //OnHealthPctChanged(currentHealthPct);
 
         //Update score with damage dealt
         score -= (double)Math.Round(amount); //amount is negative so subtract to get positive
@@ -136,7 +147,7 @@ public class BossController : MonoBehaviour
         {
             //Damage calculations
             Vector3 vel = collision.relativeVelocity;
-            float damageModifier = -0.5f * (float)Math.Log(vel.magnitude) / difficultyLevel; //divided by enemy level (1, 2, 3)
+            float damageModifier = -0.1f * (float)Math.Log(vel.magnitude) / difficultyLevel; //divided by enemy level (1, 2, 3)
             ModifyHealth(damageScale * damageModifier);
 
             //If health is above zero, play hit animation
