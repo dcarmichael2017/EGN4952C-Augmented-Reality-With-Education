@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 2683864367972388445}
   - component: {fileID: 2683864367972388418}
   - component: {fileID: 2683864367972388419}
-  - component: {fileID: 2683864367972388416}
+  - component: {fileID: 2402845633048300509}
   m_Layer: 0
   m_Name: Health Bar Canvas
   m_TagString: Untagged
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2683864367972388416
+--- !u!114 &2402845633048300509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2683864367972388417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c927e66fcb2e6945854dc6e3f0f5c63, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a232a80ec95664f8004e252c3cd798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   foregroundImage: {fileID: 2683864366847536756}
@@ -493,8 +493,8 @@ GameObject:
   - component: {fileID: 5869049733357699794}
   - component: {fileID: 5869049733357699753}
   - component: {fileID: 5869049733357699759}
-  - component: {fileID: 5869049733357699756}
   - component: {fileID: 382632598117054909}
+  - component: {fileID: 4899119464487862015}
   m_Layer: 0
   m_Name: DragonSoulEaterBluePBR
   m_TagString: Enemy
@@ -576,21 +576,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5869049733357699756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5869049733357699795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecf7f5013742a1418f3d6226595bb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  CurSpeed: 0
-  healthBarCanvas: {fileID: 2683864367972388417}
 --- !u!136 &382632598117054909
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -605,6 +590,22 @@ CapsuleCollider:
   m_Height: 6.4870987
   m_Direction: 1
   m_Center: {x: 0, y: 1.7075063, z: -0.26583007}
+--- !u!114 &4899119464487862015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5869049733357699795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c57d3b298886db47950c47ea67a7052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  CurSpeed: 0
+  healthBarCanvas: {fileID: 2683864367972388417}
+  lookRadius: 20
 --- !u!1 &5869049733361092255
 GameObject:
   m_ObjectHideFlags: 0
