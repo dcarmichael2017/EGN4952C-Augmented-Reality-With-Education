@@ -1489,9 +1489,11 @@ MonoBehaviour:
   cannon: {fileID: 2073082452}
   cannonActions: {fileID: 0}
   cannonBall: {fileID: 0}
+  cannonBallGO: {fileID: 0}
   powerText: {fileID: 209776569}
   plusButton: 0
   minusButton: 0
+  currentMass: 1
 --- !u!222 &209776571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3344,6 +3346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannon: {fileID: 2073115897}
+  powerScript: {fileID: 0}
+  _mass: 1
 --- !u!23 &812252350
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4701,7 +4705,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -8350,9 +8354,11 @@ MonoBehaviour:
   cannon: {fileID: 2073082452}
   cannonActions: {fileID: 0}
   cannonBall: {fileID: 0}
+  cannonBallGO: {fileID: 0}
   powerText: {fileID: 209776569}
   plusButton: 0
   minusButton: 0
+  currentMass: 1
 --- !u!114 &2073115901
 MonoBehaviour:
   m_ObjectHideFlags: 0
