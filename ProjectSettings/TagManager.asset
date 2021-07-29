@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Enemy
   - Castle
+  - Fire
+  - Ground
   layers:
   - Default
   - TransparentFX

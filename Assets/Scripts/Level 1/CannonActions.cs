@@ -11,7 +11,7 @@ public class CannonActions : MonoBehaviour
 
     public GameObject Cannonball = null;
 
-    public float Power = 12.0f;
+    public float Power = 35.0f;
 
     public float sidewaysMove = 100.0f;
 
@@ -79,8 +79,28 @@ public class CannonActions : MonoBehaviour
 
             //rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
 
-            cannonballRB.velocity = Power * CannonBall_Spawn.forward * scale;
+            //cannonballRB.velocity = Power * CannonBall_Spawn.forward * scale;
+
+            cannonballRB.AddForce(Power * CannonBall_Spawn.forward * scale);
         }
 
+    }
+
+    public void Buttons(string buttons)
+    {
+        switch (buttons)
+        {
+            case "PLUS":
+                if (Power < 200)
+                    Power = Power + 5;
+
+                break;
+
+            case "MINUS":
+                if (Power > 35)
+                    Power = Power - 5;
+
+                break;
+        }
     }
 }

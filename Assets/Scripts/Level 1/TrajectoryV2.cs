@@ -23,8 +23,10 @@ public class TrajectoryV2 : MonoBehaviour
 
     private LineRenderer _lr; //Line to predict trajectory
 
+    public PowerAndSize powerScript;
+
     //private float _force = 500; //Force, can be assigned in Unity Inspector
-    private float _mass = 1; //Automatic mass of an object is 1, can be reassigned
+    public float _mass = 1; //Automatic mass of an object is 1, can be reassigned
     private float _fixedDeltaTime;
     private float _vel; //Initial Velocity, calculated via V = Force / Mass * fixedTime (0.02)
     private float _gravity;
@@ -42,6 +44,7 @@ public class TrajectoryV2 : MonoBehaviour
     void Update()
     {
         DrawTrajectory(); //Simulate trajectory calculation at run-time
+        _mass = powerScript.currentMass;
 
     }
 
@@ -65,8 +68,8 @@ public class TrajectoryV2 : MonoBehaviour
         //Vector3 launchPosition = transform.position + transform.up; //INPUT launch origin (Important to make sure RayCast is ignoring some layers (easiest to use default Layer 2))
         Vector3 launchPosition = cannonActions.CannonBall_Spawn.position;
 
-        //_vel = cannonActions.Power / _mass * Time.fixedDeltaTime; //Initial Velocity, or Velocity Modifier, with which to calculate Vector Velocity
-        _vel = cannonActions.Power; //Initial Velocity, or Velocity Modifier, with which to calculate Vector Velocity
+        _vel = cannonActions.Power / _mass * Time.fixedDeltaTime; //Initial Velocity, or Velocity Modifier, with which to calculate Vector Velocity
+        //_vel = cannonActions.Power; //Initial Velocity, or Velocity Modifier, with which to calculate Vector Velocity
 
         for (int i = 0; i < maxSteps; ++i)
         {

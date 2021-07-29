@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6923206327297141677}
   - component: {fileID: 5123182868460674459}
   - component: {fileID: 672151079392460660}
+  - component: {fileID: 7189106279764234598}
   m_Layer: 0
   m_Name: Asteroid_3 Falling Prefab
   m_TagString: Projectile
@@ -112,3 +113,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7189106279764234598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3481717301379307859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7a5b50fbfd31f4b92ea786a705778e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
