@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CannonActions : MonoBehaviour
 {
@@ -19,8 +20,10 @@ public class CannonActions : MonoBehaviour
 
     private float scale = 1f;
 
-    private float nextShot = 0f;
-    private float fireRate = 0.75f; //seconds
+    public float fireRate = 0.75f; //seconds
+    private float counter = 0f;
+
+    public Button fireButton;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class CannonActions : MonoBehaviour
         //CannonBall_Spawn = transform.Find("CannonBall_Spawn");
 
         powerAndSize = GetComponent<PowerAndSize>();
+        counter = fireRate;
     }
 
 
@@ -38,6 +42,13 @@ public class CannonActions : MonoBehaviour
         {
             ShootCannonBall();
         }
+
+        counter += Time.deltaTime;
+
+        if (counter < fireRate)
+            fireButton.interactable = false;
+        else
+            fireButton.interactable = true;
 
         // Found a more efficient way to move
         /*if (Input.GetKey("a"))
@@ -56,10 +67,10 @@ public class CannonActions : MonoBehaviour
 
     public void ShootCannonBall()
     {
-        if (Time.time > nextShot)
+        if (counter >= fireRate)
         {
             //next time cannon can shoot (in seconds)
-            nextShot = Time.time + fireRate;
+            counter = 0;
 
             GameObject cannonball = Instantiate(Cannonball, CannonBall_Spawn.position, Quaternion.identity);
 
