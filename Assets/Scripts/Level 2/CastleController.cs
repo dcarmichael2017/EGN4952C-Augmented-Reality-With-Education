@@ -29,4 +29,16 @@ public class CastleController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, castleRadius);
     }
 
+    public bool WithinRange(Transform gameobject) 
+    {
+        float distance = Vector3.Distance(gameobject.position, this.transform.position);
+
+        if (distance <= castleRadius)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
 }

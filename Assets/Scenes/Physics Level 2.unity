@@ -1126,6 +1126,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1433,6 +1443,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -2652,6 +2672,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -3293,6 +3323,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -3540,6 +3580,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -4044,6 +4094,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -4113,6 +4173,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -4182,6 +4252,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
@@ -5552,6 +5632,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MeteorController : MonoBehaviour
 {
+
+    public CastleController castleController;
+    public CastleHealth castleHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,13 @@ public class MeteorController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("test");
-            //Destroy cannonball on collision
+            if (castleController.WithinRange(this.transform))
+            {
+                castleHealth.ModifyHealth(-10);
+                //Destroy cannonball on collision
+                Destroy(gameObject);
+            }
+
             Destroy(gameObject);
         }
 
