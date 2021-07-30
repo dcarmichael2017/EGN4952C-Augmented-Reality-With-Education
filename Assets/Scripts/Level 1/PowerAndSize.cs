@@ -9,10 +9,6 @@ public class PowerAndSize : MonoBehaviour
 
 	public CannonActions cannonActions;
 
-	public Rigidbody cannonBall;
-
-	public GameObject cannonBallGO;
-
 	public TMP_Text powerText;
 
 	public bool plusButton;
@@ -23,11 +19,11 @@ public class PowerAndSize : MonoBehaviour
 
 	private float scale = 0.1f;
 
-	public float currentMass = 1f;
+	public float currentMass = 0.1f;
 
 	void Start()
 	{
-		massConstraint = 1f;
+		massConstraint = 0.1f;
 		//cannonBall = cannon.GetComponent<Rigidbody>();
 		cannonActions = cannon.GetComponent<CannonActions>();
 
@@ -38,14 +34,14 @@ public class PowerAndSize : MonoBehaviour
 		if (plusButton)
 		{
 			//cannonBall.mass = cannonBall.mass + 5 * scale;
-			currentMass = currentMass + 5 * scale;
+			currentMass += 5 * scale;
 			plusButton = false;
 		}
 		//if (minusButton && (cannonBall.mass - 5) >= massConstraint)
 		if (minusButton && (currentMass) >= massConstraint) //&& (cannonBall.mass) >= massConstraint
 		{
 			//cannonBall.mass = cannonBall.mass - 5 * scale;
-			currentMass = currentMass - 5 * scale;
+			currentMass -= 5 * scale;
 			minusButton = false;
 		}
 		cannonActions = cannon.GetComponent<CannonActions>();
