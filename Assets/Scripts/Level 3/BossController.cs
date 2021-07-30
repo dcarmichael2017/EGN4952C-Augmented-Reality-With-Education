@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
+using DigitalRuby.PyroParticles;
 
 public class BossController : MonoBehaviour
 {
@@ -22,11 +23,15 @@ public class BossController : MonoBehaviour
 
     private Animator animator;
 
-    public float lookRadius= 20f;
+    public float lookRadius = 20f;
 
     Transform target;
     NavMeshAgent agent;
     public float actionTimer;
+
+    public Transform fireballSpawn;
+    public GameObject FireBallPrefab;
+    private FireBaseScript currentPrefabScript;
 
     //null check
     public event Action<float> OnHealthPctChanged = delegate { };
@@ -70,25 +75,27 @@ public class BossController : MonoBehaviour
         // healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
         if (actionTimer > (float)0.01)
-         healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
+            healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius && distance >= lookRadius/2)
+        if (distance <= lookRadius && distance >= lookRadius / 2)
         {
             agent.SetDestination(target.position);
+            agent.speed = 1;
             actionTimer = 0;
         }
-        else if (distance <= lookRadius/2)
+        else if (distance <= lookRadius / 2)
         {
             agent.speed = 0;
             actionTimer += Time.deltaTime;
-            float currentHealthPct = actionTimer / (float) 4;
+            float currentHealthPct = actionTimer / (float)4;
             OnHealthPctChanged(currentHealthPct);
             if (actionTimer >= 4)
             {
                 animator.SetTrigger("Shoot");
                 actionTimer = 0;
+                ShootFireBall();
             }
         }
 
@@ -182,5 +189,31 @@ public class BossController : MonoBehaviour
         //Update score variable
         score = double.Parse(scoreText.text);
         GameValues.score = score;
+    }
+
+    private void ShootFireBall()
+    {
+
+        GameObject currentPrefabObject = GameObject.Instantiate(FireBallPrefab);
+        currentPrefabScript = currentPrefabObject.GetComponent<FireConstantBaseScript>();
+
+        if (currentPrefabScript == null)
+        {
+            // temporary effect, like a fireball
+            currentPrefabScript = currentPrefabObject.GetComponent<FireBaseScript>();
+            if (currentPrefabScript.IsProjectile)
+            {
+                FireProjectileScript projectileScript = currentPrefabObject.GetComponentInChildren<FireProjectileScript>();
+                if (projectileScript != null)
+                {
+                    // make sure we don't collide with other fire layers
+                    projectileScript.ProjectileCollisionLayers &= (~UnityEngine.LayerMask.NameToLayer("FireLayer"));
+                }
+
+                currentPrefabObject.transform.position = fireballSpawn.position;
+                currentPrefabObject.transform.rotation = fireballSpawn.rotation;
+
+            }
+        }
     }
 }
