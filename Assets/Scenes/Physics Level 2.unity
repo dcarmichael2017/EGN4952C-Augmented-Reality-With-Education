@@ -1627,17 +1627,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Force is a product of mass and acceleration. More mass or acceleration
-    will create a larger force.
-
-
-    Use the + or - buttons to change the mass of
-    the cannonball. The arrow pad will change the direction the cannon is facing.
-    The circle will launch the cannonball.
-
-
-    Pay attention to how the numbers
-    in the top left change based on the change in mass.'
+  m_text: "Every action has an equal but opposite reaction. \n\nUse this concept
+    to knock away the meteors falling towards the castle. Set the force using the
+    + and - buttons. Whatever force the cannonball hits the meteor with, the meteor
+    will exert an equal force in the opposite direction."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
