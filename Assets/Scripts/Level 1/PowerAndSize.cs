@@ -45,7 +45,7 @@ public class PowerAndSize : MonoBehaviour
 			minusButton = false;
 		}
 		cannonActions = cannon.GetComponent<CannonActions>();
-		powerText.text = "Force: " + cannonActions.Power.ToString() + "\nMass: 1\nAcceleration: " + (cannonActions.Power/currentMass/10).ToString();
+		powerText.text = "Force: " + cannonActions.Power.ToString() + "\nMass: 1\nAcceleration: " + cannonActions.Power.ToString();
 	}
 
 	public float getCannonBallMass()
