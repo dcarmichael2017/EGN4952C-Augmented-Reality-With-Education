@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
 using DigitalRuby.PyroParticles;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class BossController : MonoBehaviour
     private Vector3 previousPosition;
     public float CurSpeed;
 
-    public GameObject healthBarCanvas;
+    public GameObject actionTimerBar;
     private TMP_Text scoreText;
 
     private Animator animator;
@@ -33,6 +34,11 @@ public class BossController : MonoBehaviour
     public GameObject FireBallPrefab;
     private FireBaseScript currentPrefabScript;
 
+    //Health bar
+    public GameObject healthBar;
+    public Text healthText;
+    public Image bossHealthBar;
+
     //null check
     public event Action<float> OnHealthPctChanged = delegate { };
 
@@ -40,7 +46,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBarCanvas.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        actionTimerBar.gameObject.transform.localScale = new Vector3(0, 0, 0);
 
         try
         {
@@ -75,7 +81,12 @@ public class BossController : MonoBehaviour
         // healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
         if (actionTimer > (float)0.01)
-            healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
+            actionTimerBar.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
+
+        bossHealthBar.fillAmount = (float)(currentHealth / maxHealth);
+        if (currentHealth < 0)
+            currentHealth = 0;
+        healthText.text = currentHealth.ToString("F2");
 
         float distance = Vector3.Distance(target.position, transform.position);
 
