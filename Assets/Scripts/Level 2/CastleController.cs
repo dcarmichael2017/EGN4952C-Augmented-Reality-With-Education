@@ -26,7 +26,8 @@ public class CastleController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, castleRadius);
+        Gizmos.DrawWireCube(transform.position, new Vector3(30, 5, 12));
+        
     }
 
     public bool WithinRange(Transform gameobject) 

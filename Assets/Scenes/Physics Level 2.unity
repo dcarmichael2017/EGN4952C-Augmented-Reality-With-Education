@@ -1126,6 +1126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -1140,6 +1145,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -1360,6 +1380,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -1374,6 +1399,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -1643,6 +1683,199 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &483896096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3481717301379307859, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Name
+      value: Asteroid_3 Falling Prefab (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae4eb4c0f9232e749a7221a3eb1ae04a, type: 3}
+--- !u!1001 &488812373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3481717301379307859, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Name
+      value: Asteroid_3 Falling Prefab (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae4eb4c0f9232e749a7221a3eb1ae04a, type: 3}
 --- !u!1 &511836252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,7 +2208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4668002515956546, guid: b386562e148b0a34bb5a0ae3fd143c66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2833405
+      value: 3.5983405
       objectReference: {fileID: 0}
     - target: {fileID: 4668002515956546, guid: b386562e148b0a34bb5a0ae3fd143c66, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2571,6 +2804,100 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000030517578, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1001 &775193522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3481717301379307859, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Name
+      value: Asteroid_3 Falling Prefab (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae4eb4c0f9232e749a7221a3eb1ae04a, type: 3}
 --- !u!1001 &811613670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2582,6 +2909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -2597,6 +2929,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -3113,6 +3460,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -3130,18 +3482,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.51
+      value: 8.67
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.91
+      value: 15.41
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.16
+      value: -9.2
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -3370,6 +3737,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -3384,6 +3761,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -3962,6 +4354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -3976,6 +4373,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -4041,6 +4453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -4055,6 +4472,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -4120,6 +4552,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -4134,6 +4571,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -5500,6 +5952,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_3 Falling Prefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: castleHealth
@@ -5517,6 +5974,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.49
       objectReference: {fileID: 0}
@@ -5524,6 +5996,105 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae4eb4c0f9232e749a7221a3eb1ae04a, type: 3}
+--- !u!1001 &1814372289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3481717301379307859, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Name
+      value: Asteroid_3 Falling Prefab (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123182868460674459, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleHealth
+      value: 
+      objectReference: {fileID: 569152024}
+    - target: {fileID: 7189106279764234598, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: castleController
+      value: 
+      objectReference: {fileID: 569152026}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.38
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -7288,7 +7859,7 @@ PrefabInstance:
     - target: {fileID: 3762213798881976589, guid: 064c6b0faa6fb5443b0564646161fa7f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.285
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 3762213798881976589, guid: 064c6b0faa6fb5443b0564646161fa7f,
         type: 3}
