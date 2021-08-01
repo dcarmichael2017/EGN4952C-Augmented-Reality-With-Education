@@ -22,8 +22,11 @@ public class CannonActions : MonoBehaviour
 
     public float fireRate = 0.75f; //seconds
     private float counter = 0f;
+    private float skillCounter = 0f;
+    private float skillRate = 5f;
 
     public Button fireButton;
+    public Button skillButton;
 
     // Start is called before the first frame update
     void Start()
@@ -44,11 +47,21 @@ public class CannonActions : MonoBehaviour
         }
 
         counter += Time.deltaTime;
+        skillCounter += Time.deltaTime;
 
         if (counter < fireRate)
             fireButton.interactable = false;
         else
             fireButton.interactable = true;
+
+        try
+        {
+            if (skillCounter < skillRate)
+                skillButton.interactable = false;
+            else
+                skillButton.interactable = true;
+        }
+        catch (System.Exception e) { }
 
         // Found a more efficient way to move
         /*if (Input.GetKey("a"))
@@ -110,7 +123,13 @@ public class CannonActions : MonoBehaviour
             case "MINUS":
                 if (Power > 35)
                     Power = Power - 5;
-
+                break;
+            case "SKILL":
+                skillCounter = 0;
+                float temp = Power;
+                Power = 250;
+                ShootCannonBall();
+                Power = temp;
                 break;
         }
     }
