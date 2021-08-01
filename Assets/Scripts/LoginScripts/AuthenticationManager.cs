@@ -199,6 +199,8 @@ public class AuthenticationManager : MonoBehaviour
         // Debug.Log("Getting user's id...");
         string subId = "";
 
+        string aName = "";
+
         Task<GetUserResponse> responseTask =
            _provider.GetUserAsync(new GetUserRequest
            {
@@ -213,6 +215,7 @@ public class AuthenticationManager : MonoBehaviour
             if (attribute.Name == "sub")
             {
                 subId = attribute.Value;
+                Debug.Log("This is the users id: " + subId);
                 break;
             }
         }

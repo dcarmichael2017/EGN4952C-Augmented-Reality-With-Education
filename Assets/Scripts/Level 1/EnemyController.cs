@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
+using UnityEditor;
 
 public class EnemyController : MonoBehaviour
 {
@@ -118,12 +119,25 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject, animTime + 2);
             }
 
+            //play enemy hit sound
+            FindObjectOfType<AudioManager>().Play("GolemHit");
+
             //Destroy cannonball on collision
             Destroy(collision.collider.gameObject);
         }
-
         else if (collision.gameObject.CompareTag("Castle"))
         {
+
+            //play enemy sound
+            if (String.Equals(gameObject.name, "HP_Golem Variant(Clone)"))
+            {
+                FindObjectOfType<AudioManager>().Play("HPGolemCollide");
+            } else if (String.Equals(gameObject.name, "PBR_Golem Variant(Clone)"))
+            {
+                FindObjectOfType<AudioManager>().Play("PBRGolemCollide");
+            }
+           
+
             //add hit animation here?
             Destroy(gameObject);
         }
