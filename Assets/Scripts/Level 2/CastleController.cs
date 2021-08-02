@@ -10,6 +10,12 @@ public class CastleController : MonoBehaviour
 
     public float castleRadius = 20f;
 
+    public float  height = 5;
+
+    public float length = 30;
+
+    public float width = 12;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +32,7 @@ public class CastleController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(30, 5, 12));
+        Gizmos.DrawWireCube(transform.position, new Vector3(length, height, width));
         
     }
 
