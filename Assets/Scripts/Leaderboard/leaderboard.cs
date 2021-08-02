@@ -30,7 +30,7 @@ public class leaderboard : MonoBehaviour
     {
         try
         {
-            Username = (_authenticationManager.GetUsersId());
+            Username = (_authenticationManager.GetPreferred());
             score = GameValues.score;
             //Username = GameValues.currentUser;
             //Debug.Log("CURRENT USER: " + Username);
