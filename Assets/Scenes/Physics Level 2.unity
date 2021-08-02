@@ -2307,11 +2307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4711366320800740, guid: d9ba77b42843888419fcfca4da4fb5d7, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
       value: 24
-=======
-      value: 20
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4711366320800740, guid: d9ba77b42843888419fcfca4da4fb5d7, type: 3}
       propertyPath: m_LocalScale.x
@@ -2686,11 +2682,7 @@ PrefabInstance:
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
       value: 22
-=======
-      value: 23
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -4325,11 +4317,7 @@ PrefabInstance:
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
       value: 25
-=======
-      value: 26
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
@@ -10535,11 +10523,7 @@ PrefabInstance:
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
       value: 23
-=======
-      value: 24
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8325864020357290047, guid: ae4eb4c0f9232e749a7221a3eb1ae04a,
         type: 3}
