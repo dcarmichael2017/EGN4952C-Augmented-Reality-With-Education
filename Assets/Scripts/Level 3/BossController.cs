@@ -29,6 +29,7 @@ public class BossController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     public float actionTimer;
+    private float agentSpeed;
 
     public Transform fireballSpawn;
     public GameObject FireBallPrefab;
@@ -45,6 +46,9 @@ public class BossController : MonoBehaviour
     //roar timer
     private float roarRate = 8.0f;
     private float lastRoar = 0.0f;
+
+    //Castle object
+    public CastleHealth castleHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -97,7 +101,8 @@ public class BossController : MonoBehaviour
         if (distance <= lookRadius && distance >= lookRadius / 2)
         {
             agent.SetDestination(target.position);
-            agent.speed = 1;
+            //agent.speed = 1;
+            agent.speed = agentSpeed;
             actionTimer = 0;
         }
         else if (distance <= lookRadius / 2)
@@ -106,11 +111,15 @@ public class BossController : MonoBehaviour
             actionTimer += Time.deltaTime;
             float currentHealthPct = actionTimer / (float)4;
             OnHealthPctChanged(currentHealthPct);
-            if (actionTimer >= 4)
+            if (actionTimer >= 3)
             {
                 animator.SetTrigger("Shoot");
-                actionTimer = 0;
-                ShootFireBall();
+                if (actionTimer >= 4)
+                {
+                    actionTimer = 0;
+                    ShootFireBall();
+                    castleHealth.ModifyHealth(-30);
+                }
             }
         }
 
@@ -145,7 +154,7 @@ public class BossController : MonoBehaviour
 
     public void StartLevel()
     {
-        agent.speed = 1;
+        agentSpeed = 1f;
     }
 
     private void OnDrawGizmosSelected()
@@ -177,6 +186,11 @@ public class BossController : MonoBehaviour
             Vector3 vel = collision.relativeVelocity;
             float damageModifier = -0.1f * (float)Math.Log(vel.magnitude) / difficultyLevel; //divided by enemy level (1, 2, 3)
             ModifyHealth(damageScale * damageModifier);
+
+            Vector3 moveDirection = this.transform.position - target.transform.position;
+            this.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * 500f);
+
+            agentSpeed += 0.5f;
 
             //If health is above zero, play hit animation
             if (currentHealth > 0)
