@@ -52,7 +52,7 @@ public class UIInputManagerTMPro : MonoBehaviour
             logoutButton.gameObject.SetActive(true);
             loginMenu.Toggle(false);
             mainMenu.Toggle(true);
-            userIDText.SetText(_authenticationManager.GetUsersId());
+            userIDText.SetText(_authenticationManager.GetPreferred());
             refreshRankingsButton.gameObject.SetActive(true);
 
             //set user id in game values for other scenes

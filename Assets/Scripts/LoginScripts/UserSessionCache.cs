@@ -8,15 +8,17 @@ public class UserSessionCache : ISaveable
     public string _accessToken;
     public string _refreshToken;
     public string _userId;
+    public string _preferredUserName;
 
     public UserSessionCache() { }
 
-    public UserSessionCache(string idToken, string accessToken, string refreshToken, string userId)
+    public UserSessionCache(string idToken, string accessToken, string refreshToken, string userId, string preferredUserName)
     {
         _idToken = idToken;
         _accessToken = accessToken;
         _refreshToken = refreshToken;
         _userId = userId;
+        _preferredUserName = preferredUserName;
     }
 
     public string getIdToken()
@@ -37,6 +39,11 @@ public class UserSessionCache : ISaveable
     public string getUserId()
     {
         return _userId;
+    }
+
+    public string getPreferredUserName()
+    {
+        return _preferredUserName;
     }
 
     public string ToJson()

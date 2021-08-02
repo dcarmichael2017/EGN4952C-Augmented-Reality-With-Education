@@ -24,6 +24,7 @@ public class AuthenticationManager : MonoBehaviour
     private CognitoAWSCredentials _cognitoAWSCredentials;
     private static string _userid = "";
     private CognitoUser _user;
+    private static string _preferredUserName = "";
 
     public async Task<bool> RefreshSession()
     {
@@ -67,7 +68,8 @@ public class AuthenticationManager : MonoBehaviour
                authFlowResponse.AuthenticationResult.IdToken,
                authFlowResponse.AuthenticationResult.AccessToken,
                authFlowResponse.AuthenticationResult.RefreshToken,
-               userSessionCache.getUserId());
+               userSessionCache.getUserId(),
+               userSessionCache.getPreferredUserName());
 
             SaveDataManager.SaveJsonData(userSessionCacheToUpdate);
 
@@ -123,7 +125,7 @@ public class AuthenticationManager : MonoBehaviour
                authFlowResponse.AuthenticationResult.IdToken,
                authFlowResponse.AuthenticationResult.AccessToken,
                authFlowResponse.AuthenticationResult.RefreshToken,
-               _userid);
+               _userid, _preferredUserName);
 
             SaveDataManager.SaveJsonData(userSessionCache);
 
@@ -193,6 +195,19 @@ public class AuthenticationManager : MonoBehaviour
         return _userid;
     }
 
+    public string GetPreferred() 
+    {
+        // Debug.Log("GetUserId: [" + _userid + "]");
+        if (_preferredUserName == null || _preferredUserName == "")
+        {
+            // load userid from cached session 
+            UserSessionCache userSessionCache = new UserSessionCache();
+            SaveDataManager.LoadJsonData(userSessionCache);
+            _preferredUserName = userSessionCache.getPreferredUserName();
+        }
+        return _preferredUserName;
+    }
+
     // we call this once after the user is authenticated, then cache it as part of the session for later retrieval 
     private async Task<string> GetUserIdFromProvider(string accessToken)
     {
@@ -216,7 +231,15 @@ public class AuthenticationManager : MonoBehaviour
             {
                 subId = attribute.Value;
                 Debug.Log("This is the users id: " + subId);
-                break;
+                //break;
+            }
+
+            if (attribute.Name == "preferred_username")
+            {
+                aName = attribute.Value;
+                _preferredUserName = aName;
+                Debug.Log("This is the username: " + aName);
+                //break;
             }
         }
 
@@ -231,7 +254,7 @@ public class AuthenticationManager : MonoBehaviour
         await _user.GlobalSignOutAsync();
 
         // Important! Make sure to remove the local stored tokens 
-        UserSessionCache userSessionCache = new UserSessionCache("", "", "", "");
+        UserSessionCache userSessionCache = new UserSessionCache("", "", "", "", "");
         SaveDataManager.SaveJsonData(userSessionCache);
 
         Debug.Log("user logged out.");
