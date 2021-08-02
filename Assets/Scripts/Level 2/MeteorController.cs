@@ -46,7 +46,7 @@ public class MeteorController : MonoBehaviour
                 //Destroy cannonball on collision
                 Destroy(gameObject);
             }
-
+            GameValues.score += 20;
             Destroy(gameObject);
         }
 
