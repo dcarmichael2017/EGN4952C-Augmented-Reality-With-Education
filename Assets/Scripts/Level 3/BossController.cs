@@ -42,6 +42,10 @@ public class BossController : MonoBehaviour
     //null check
     public event Action<float> OnHealthPctChanged = delegate { };
 
+    //roar timer
+    private float roarRate = 8.0f;
+    private float lastRoar = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,6 +134,12 @@ public class BossController : MonoBehaviour
         previousPosition = transform.position;
         animator.SetFloat("Speed", CurSpeed);
 
+        //play dragon roar on timer
+        if (Time.time > roarRate + lastRoar)
+        {
+            FindObjectOfType<AudioManager>().Play("DragonRoar");
+            lastRoar = Time.time;
+        }
 
     }
 
@@ -183,6 +193,9 @@ public class BossController : MonoBehaviour
 
                 Destroy(gameObject, animTime + 2);
             }
+
+            //play dragon hit sound
+            FindObjectOfType<AudioManager>().Play("DragonHit");
 
             //Destroy cannonball on collision
             Destroy(collision.collider.gameObject);

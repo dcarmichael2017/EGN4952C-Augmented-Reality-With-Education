@@ -27,6 +27,7 @@ public class MeteorController : MonoBehaviour
         {
             if (castleController.WithinRange(this.transform))
             {
+                FindObjectOfType<AudioManager>().Play("MeteorCollide");
                 castleHealth.ModifyHealth(-10);
                 //Destroy cannonball on collision
                 Destroy(gameObject);

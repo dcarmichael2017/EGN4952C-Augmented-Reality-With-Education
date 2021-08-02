@@ -68,3 +68,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: MeteorCollide
+    clip: {fileID: 8300000, guid: d4aee29185389894b9cc0d8873904a49, type: 3}
+    volume: 1
+    pitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: DragonRoar
+    clip: {fileID: 8300000, guid: 4ff2cd7e27d300840967aabc540e9213, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DragonHit
+    clip: {fileID: 8300000, guid: 855fe1bcb44c46c47b82fdfcae523d67, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
