@@ -68,7 +68,6 @@ public class MeteorController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {
-
             updateScoreText(20);
             Destroy(gameObject);
         }
@@ -77,15 +76,14 @@ public class MeteorController : MonoBehaviour
 
     public void updateScore()
     {
-        //Update score variable
-        score = double.Parse(scoreText.text);
         GameValues.score = score;
     }
 
-    public void updateScoreText(float amount)
+    public void updateScoreText(double amount)
     {
         //Update score with damage dealt
-        score += (double)Math.Round(amount);
+        score = GameValues.score;
+        score += amount;
         scoreText.text = score.ToString();
         updateScore();
     }
