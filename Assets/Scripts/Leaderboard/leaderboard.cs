@@ -14,11 +14,14 @@ public class leaderboard : MonoBehaviour
     private double score;
     public  TMP_Text leaderBoardText;
 
+    public int Level;
+
     public AuthenticationManager _authenticationManager;
 
     [Obsolete]
     void Start()
     {
+
         Username = null;
         
         GetScoresForLeaderBoard();
@@ -43,7 +46,7 @@ public class leaderboard : MonoBehaviour
     {
         public int id;
         public string Username;
-        public double Clicks;
+        public double Score;
     }
 
     public EventData[] eventLeaderBoard;
@@ -58,7 +61,12 @@ public class leaderboard : MonoBehaviour
     {
         get 
         {
-            return "http://ec2-18-236-231-98.us-west-2.compute.amazonaws.com:1337/tutorials";
+            if (Level == 1)
+                return "http://ec2-18-236-231-98.us-west-2.compute.amazonaws.com:1337/tutorials";
+            else if (Level == 2)
+                return "http://ec2-18-236-231-98.us-west-2.compute.amazonaws.com:1337/twos";
+            else
+                return "http://ec2-18-236-231-98.us-west-2.compute.amazonaws.com:1337/threes";
         }
     }
 
@@ -74,7 +82,7 @@ public class leaderboard : MonoBehaviour
         if (Username != null)
         {
             EventData leaderboardData = new EventData();
-            leaderboardData.Clicks = score;
+            leaderboardData.Score = score;
             string json = JsonUtility.ToJson(leaderboardData);
             byte[] bodyRaw = new System.Text.UTF8Encoding().GetBytes(json);
 
@@ -118,14 +126,14 @@ public class leaderboard : MonoBehaviour
             string json = "{ \"array\": " + www.downloadHandler.text + "}";
             Debug.Log(json);
             Wrapper<EventData> wrapper = JsonUtility.FromJson<Wrapper<EventData>>(json);
-            eventLeaderBoard = wrapper.array.OrderByDescending(go => go.Clicks).ToArray();
+            eventLeaderBoard = wrapper.array.OrderByDescending(go => go.Score).ToArray();
         }
 
         leaderBoardText.text = "";
         int eventDataCounter = 1;
         foreach (EventData data in eventLeaderBoard)
         {
-            leaderBoardText.text += eventDataCounter + ". " + data.Username + ": " + data.Clicks + "\n";
+            leaderBoardText.text += eventDataCounter + ". " + data.Username + ": " + data.Score + "\n";
             eventDataCounter++;
         }
     }

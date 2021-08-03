@@ -2403,7 +2403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderBoardText: {fileID: 106484488}
-  _authenticationManager: {fileID: 0}
+  Level: 1
+  _authenticationManager: {fileID: 1578156603}
   eventLeaderBoard: []
 --- !u!1001 &339334045
 PrefabInstance:
