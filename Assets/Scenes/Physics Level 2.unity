@@ -13252,6 +13252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderBoardText: {fileID: 972029217}
+  Level: 2
   _authenticationManager: {fileID: 2117366571}
   eventLeaderBoard: []
 --- !u!114 &2117366573
