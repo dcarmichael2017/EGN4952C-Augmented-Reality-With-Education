@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class MeteorController : MonoBehaviour
 {
@@ -8,10 +10,16 @@ public class MeteorController : MonoBehaviour
     public CastleController castleController;
     public CastleHealth castleHealth;
 
+    private TMP_Text scoreText;
     private int difficultyLevel = 1;
+    private double score = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
+
         //set difficultyLevel (higher level increases damage dealt to castle)
         if (GameValues.currentDifficulty == GameValues.Difficulties.Easy)
         {
@@ -60,9 +68,25 @@ public class MeteorController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {
-            GameValues.score += 20;
+
+            updateScoreText(20);
             Destroy(gameObject);
         }
 
+    }
+
+    public void updateScore()
+    {
+        //Update score variable
+        score = double.Parse(scoreText.text);
+        GameValues.score = score;
+    }
+
+    public void updateScoreText(float amount)
+    {
+        //Update score with damage dealt
+        score += (double)Math.Round(amount);
+        scoreText.text = score.ToString();
+        updateScore();
     }
 }
