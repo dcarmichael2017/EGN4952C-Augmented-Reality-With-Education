@@ -115,7 +115,7 @@ public class CannonActions : MonoBehaviour
         switch (buttons)
         {
             case "PLUS":
-                if (Power < 200)
+                if (Power < 150)
                     Power = Power + 5;
 
                 break;

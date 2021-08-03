@@ -41,6 +41,7 @@ public class CastleController : MonoBehaviour
         float distance = Vector3.Distance(gameobject.position, this.transform.position);
 
         if (distance <= castleRadius)
+        //if (collision.gameObject.name == "Meteor Damage Zone")
         {
             return true;
         }

@@ -37,15 +37,29 @@ public class MeteorController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        /*if (collision.gameObject.CompareTag("Ground"))
         {
-            if (castleController.WithinRange(this.transform))
+            //if (castleController.WithinRange(this.transform))
+            if (collision.gameObject.name == ("MDZ"))
             {
                 FindObjectOfType<AudioManager>().Play("MeteorCollide");
                 castleHealth.ModifyHealth(-10 * difficultyLevel);
                 //Destroy cannonball on collision
                 Destroy(gameObject);
             }
+            GameValues.score += 20;
+            Destroy(gameObject);
+        }*/
+
+        if (collision.gameObject.name == ("MDZ"))
+        {
+            FindObjectOfType<AudioManager>().Play("MeteorCollide");
+            castleHealth.ModifyHealth(-10 * difficultyLevel);
+            //Destroy cannonball on collision
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
             GameValues.score += 20;
             Destroy(gameObject);
         }
