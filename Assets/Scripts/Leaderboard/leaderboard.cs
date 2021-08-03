@@ -49,6 +49,14 @@ public class leaderboard : MonoBehaviour
         public double Score;
     }
 
+    public void LevelChange(int level)
+    {
+        Level = level;
+#pragma warning disable CS0612 // Type or member is obsolete
+        GetScoresForLeaderBoard();
+#pragma warning restore CS0612 // Type or member is obsolete
+    }
+
     public EventData[] eventLeaderBoard;
 
     [Serializable]
