@@ -28,6 +28,8 @@ public class CannonActions : MonoBehaviour
     public Button fireButton;
     public Button skillButton;
 
+    private System.Boolean skillHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,15 +97,9 @@ public class CannonActions : MonoBehaviour
 
             SphereCollider SC = cannonball.AddComponent<SphereCollider>();
 
-
-            /*if (barrel.transform != null) 
-            {
-                rb.AddForce(Power * CannonBall_Spawn.forward * scale);
-            }*/
-
-            //rb.velocity = Power * CannonBall_Spawn.forward * scale; //original
-
-            //cannonballRB.velocity = Power * CannonBall_Spawn.forward * scale;
+            if (skillHit)
+                cannonball.AddComponent<SkillShot>();
+            skillHit = false;
 
             cannonballRB.AddForce(Power * CannonBall_Spawn.forward * scale);
         }
@@ -128,6 +124,7 @@ public class CannonActions : MonoBehaviour
                 skillCounter = 0;
                 float temp = Power;
                 Power = 250;
+                skillHit = true;
                 ShootCannonBall();
                 Power = temp;
                 break;

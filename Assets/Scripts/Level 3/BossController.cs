@@ -19,7 +19,6 @@ public class BossController : MonoBehaviour
     private Vector3 previousPosition;
     public float CurSpeed;
 
-    public GameObject actionTimerBar;
     private TMP_Text scoreText;
 
     private Animator animator;
@@ -54,7 +53,6 @@ public class BossController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        actionTimerBar.gameObject.transform.localScale = new Vector3(0, 0, 0);
 
         try
         {
@@ -88,8 +86,6 @@ public class BossController : MonoBehaviour
         //if (currentHealth < maxHealth)
         // healthBarCanvas.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
-        if (actionTimer > (float)0.01)
-            actionTimerBar.gameObject.transform.localScale = new Vector3((float)0.01, (float)0.01, (float)0.01);
 
         bossHealthBar.fillAmount = (float)(currentHealth / maxHealth);
         if (currentHealth < 0)
@@ -104,6 +100,9 @@ public class BossController : MonoBehaviour
             //agent.speed = 1;
             agent.speed = agentSpeed;
             actionTimer = 0;
+
+            var outline = this.gameObject.GetComponent<Outline>();
+            outline.OutlineWidth = 0;
         }
         else if (distance <= lookRadius / 2)
         {
@@ -111,6 +110,11 @@ public class BossController : MonoBehaviour
             actionTimer += Time.deltaTime;
             float currentHealthPct = actionTimer / (float)4;
             OnHealthPctChanged(currentHealthPct);
+
+            var outline = this.gameObject.GetComponent<Outline>();
+            outline.OutlineWidth = actionTimer + 5;
+            
+
             if (actionTimer >= 3)
             {
                 animator.SetTrigger("Shoot");
@@ -184,10 +188,11 @@ public class BossController : MonoBehaviour
         {
             //Damage calculations
             Vector3 vel = collision.relativeVelocity;
-            float damageModifier = -0.1f * (float)Math.Log(vel.magnitude) / difficultyLevel; //divided by enemy level (1, 2, 3)
+            float damageModifier = -0.1f * (float)Math.Log(vel.magnitude) / difficultyLevel / 3; //divided by enemy level (1, 2, 3)
             ModifyHealth(damageScale * damageModifier);
 
             Vector3 moveDirection = this.transform.position - target.transform.position;
+            if(collision.gameObject.GetComponent<SkillShot>() != null)
             this.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * 500f);
 
             agentSpeed += 0.5f;
