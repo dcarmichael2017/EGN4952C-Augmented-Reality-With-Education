@@ -188,12 +188,12 @@ public class BossController : MonoBehaviour
         {
             //Damage calculations
             Vector3 vel = collision.relativeVelocity;
-            float damageModifier = -0.1f * (float)Math.Log(vel.magnitude) / difficultyLevel / 3; //divided by enemy level (1, 2, 3)
+            float damageModifier = -0.1f * (float)Math.Log(vel.magnitude) / difficultyLevel / (float)2; //divided by enemy level (1, 2, 3)
             ModifyHealth(damageScale * damageModifier);
 
             Vector3 moveDirection = this.transform.position - target.transform.position;
             if(collision.gameObject.GetComponent<SkillShot>() != null)
-            this.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * 500f);
+            this.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * 1000f);
 
             agentSpeed += 0.5f;
 
@@ -222,8 +222,8 @@ public class BossController : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Castle"))
         {
-            //add hit animation here?
-            Destroy(gameObject);
+            Vector3 moveDirection = this.transform.position - target.transform.position;
+            this.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * 750f);
         }
     }
 
